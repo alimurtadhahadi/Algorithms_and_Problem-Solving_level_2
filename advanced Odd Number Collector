@@ -1,0 +1,71 @@
+#include <iostream>
+#include <string>
+using namespace std;
+enum enOddOrEven { Odd = 1, Even = 2 };
+int readNumber() {
+	int Num;
+	cout << "Give me the starting number of the sequence :";
+	cin >> Num;
+	return Num;
+}
+enOddOrEven CheckOddOrEven(int Counter) {
+	if (Counter % 2 != 0)
+		return enOddOrEven::Odd;
+	else
+		return enOddOrEven::Even;
+}
+void printNumbersInRangeFromNTo1_byForLoop(int Num)
+{
+	int sum = 0;
+	cout << "_______________________________________________________________" << endl;
+	cout << "print numbers in Odd range by for loop" << endl;
+	for (int Counter = 1; Counter <= Num; Counter++) {
+		if (CheckOddOrEven(Counter) == enOddOrEven::Odd)
+		{
+			cout << "+" << Counter;
+			sum += Counter;
+		}
+	}
+	cout << "=" << sum << endl;
+	cout << "================================================================";
+}
+void printNumbersInRangeFromNTo1_byWhileLoop(int Num) {
+	int Counter = 1;
+	int sum = 0;
+	cout << "print numbers in Odd range by while loop" << endl;
+	while (Counter <= Num) {
+		if (CheckOddOrEven(Counter) == enOddOrEven::Odd)
+		{
+			cout << "+" << Counter;
+			sum += Counter;
+		}
+		Counter++;
+	}
+	cout << "=" << sum << endl;
+	cout << "================================================================";
+}
+void printNumbersInRangeFromNTo1_byDo_WhileLoop(int Num) {
+	int Counter = 1;
+	int sum = 0;
+	cout << "print numbers in Even range by do...while loop" << endl;
+	do {
+		if (CheckOddOrEven(Counter) == enOddOrEven::Odd)
+		{
+			cout << "+" << Counter;
+			sum += Counter;
+		}
+		Counter++;
+	} while (Counter <= Num);
+	cout << "=" << sum << endl;
+	cout << "================================================================";
+}
+int main()
+{
+	int Num = readNumber();
+	printNumbersInRangeFromNTo1_byForLoop(Num);
+	cout << endl;
+	printNumbersInRangeFromNTo1_byWhileLoop(Num);
+	cout << endl;
+	printNumbersInRangeFromNTo1_byDo_WhileLoop(Num);
+	return 0;
+}
