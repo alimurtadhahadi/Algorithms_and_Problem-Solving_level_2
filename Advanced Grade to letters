@@ -1,0 +1,35 @@
+#include <iostream>
+#include <string>
+using namespace std;
+float ReadGradeInRange(float& To)
+{
+	float Grade;
+	do {
+		cout << "please enter you're grade must be between " << 0 << " to " << To << " :";
+		cin >> Grade;
+	} while (Grade < 0 || Grade > To);
+	return Grade;
+}
+char GetGradeLetter(float Grade,float To)
+{
+	float Percentage = (Grade / To) * 100;
+	if (Percentage >= 90)
+		return 'A';
+	else if (Percentage >= 80)
+		return 'B';
+	else if (Percentage >= 70)
+		return 'C';
+	else if (Percentage >= 60)
+		return 'D';
+	else if (Percentage >= 50)
+		return 'E';
+	else
+		return 'F';
+}
+int main()
+{
+	float To = 50;
+	float Grade = ReadGradeInRange(To);
+	cout << endl << "Result = " << GetGradeLetter(Grade,To);
+	return 0;
+}
