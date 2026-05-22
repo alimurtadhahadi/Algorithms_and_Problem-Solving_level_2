@@ -1,0 +1,49 @@
+#include <iostream>
+#include <string>
+#include <cmath>
+using namespace std;
+float TotalSales()
+{
+	float totalSales;
+	do {
+		cout << "Please tell me the total sales amount(not negative) :";
+		cin >> totalSales;
+	} while (totalSales < 0);
+	return totalSales;
+}
+float GetComissionPercentage(float totalSales)
+{
+	if (totalSales >= 1000000)
+		return 0.01;
+	else if (totalSales >= 500000)
+		return 0.02;
+	else if (totalSales >= 100000)
+		return 0.03;
+	else if (totalSales >= 50000)
+		return 0.05;
+	else return 0;
+}
+string GetComissionPercentageByString(float totalSales)
+{
+	float Percentage = GetComissionPercentage(totalSales);
+	if (Percentage == 0.01f)
+		return "your percentage is 1% Excellent! You have a great business mindset.";
+	else if (Percentage == 0.02f)
+		return "your percentage is 2% Good work, but we want better next time.";
+	else if (Percentage == 0.03f)
+		return "your percentage is 3% Good work, but we want better next time.";
+	else if (Percentage == 0.05f)
+		return "your percentage is 5% Good work, but we want better next time.";
+	else return"You didn't win any percentage this time. Do better next time.";
+}
+float CalculateTotalCommission(float totalSales)
+{
+	return GetComissionPercentage(totalSales) * totalSales;
+}
+int main()
+{
+	float totalSales = TotalSales();
+	cout << GetComissionPercentageByString(totalSales) << endl;
+	cout << "your Total Commission is " << CalculateTotalCommission(totalSales) << endl;
+	return 0;
+}
