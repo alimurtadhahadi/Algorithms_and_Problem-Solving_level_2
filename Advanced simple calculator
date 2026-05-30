@@ -1,0 +1,67 @@
+#include <iostream>
+#include <string>
+using namespace std;
+enum enOperationType{Add='+', Subtract = '-', Multiply = '*', Divide = '/' };
+float ReadNumber(string message)
+{
+	float Number;
+	cout << message;
+	cin >> Number;
+	return Number;
+}
+enOperationType ReadOperationType()
+{
+	char OperationType = '+';
+	cout << "enter (+,-,/ or *) " << endl;
+	cout << "please enter operation type :";
+	cin >> OperationType;
+	return (enOperationType)OperationType;
+}
+bool boolCheckTrueDivide(float Number2, enOperationType OperationType)
+{
+	if (OperationType == enOperationType::Divide)
+	{
+		if (Number2 == 0)
+			return false;
+		else
+			return true;
+	}
+	return true;
+}
+float Calculate(float Number1, float Number2, enOperationType OperationType)
+{
+	switch (OperationType)
+	{
+	case enOperationType::Add:
+		return Number1 + Number2;
+	case enOperationType::Subtract:
+		return Number1 - Number2;
+	case enOperationType::Multiply:
+		return Number1 * Number2;
+	case enOperationType::Divide:
+		return Number1 / Number2;
+	default:
+		return Number1 + Number2;
+	}
+}
+int main()
+{
+	enOperationType OperationType;
+	float Number1, Number2;
+	bool CheckTrueDivide = false;
+	do {
+		Number1 = ReadNumber("please enter number 1 :");
+		Number2 = ReadNumber("please enter number 2 :");
+		OperationType = ReadOperationType();
+			CheckTrueDivide = boolCheckTrueDivide(Number2, OperationType);
+			if (!CheckTrueDivide)
+			{
+				cout << "Infinite" << endl
+					<< "When a number is divided by zero, the result is undefined (Infinite).\n\n";
+				cout << "Please enter other numbers." << endl;
+			}
+	} while (!CheckTrueDivide);
+	cout << endl << Number1 << char(OperationType) << Number2 << "=" <<
+		Calculate(Number1, Number2, OperationType);
+	return 0;
+}
