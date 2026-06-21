@@ -27,7 +27,7 @@ This table systematically tracks my roadmap execution from Problem #01 to #50. E
 | `#02` | Prime Numbers From 1 to N | 🟢 Completed | [Veiw Code](./%232%20Prime%20Numbers%20Range%20Finder) |
 | `#03` | Perfect Number Check | 🟢 Completed | [Veiw Code](./%2303%20Perfect%20Number%20Checker) |
 | `#04` | Perfect Numbers From 1 to N | 🟢 Completed | [Veiw Code](./%2304%20Optimized%20Perfect%20Number%20Range%20Finder) |
-| `#05` | Digits in Reverse Order | ⚪ Scheduled | [Pending] |
+| `#05` | Digits in Reverse Order | 🟢 Completed | [Veiw Code](./%2305%20Digits%20Extractor) |
 
 *Note: The status index upgrades dynamically as files migrate from local repositories onto this remote cloud terminal storage.*
 
