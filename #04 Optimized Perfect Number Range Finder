@@ -1,0 +1,75 @@
+/*
+======================================================================
+⚙️ Project      : #04-Optimized Perfect Number Range Finder (Level 2)
+👤 Author       : Ali_Dev (@Ali_Dev-Code-Lab)
+📅 Date         : June 21, 2026
+📆 Day          : Sunday
+🌐 YouTube Hub  : https://www.youtube.com/channel/UCaSc-7rRD4t0fVPI67UErzQ
+📦 GitHub Hub   : https://github.com/alimurtadhahadi
+📢 Telegram Hub : https://t.me/Ali_DevCode_Lab
+📝 Description  : 50% CPU cycle reduction framework using mid-point boundary gating.
+======================================================================
+*/
+#include <iostream>
+#include <string>
+using namespace std;
+// Strict enumeration mapping for perfect calculation flags
+enum enNumberType
+{
+    perfect = 1,
+    Notperfect = 2
+};
+// Captures and validates strict positive integer stream boundaries
+long long ReadPositiveNumber(string message)
+{
+    long long number = 0;
+    do
+    {
+        cout << message;
+        cin >> number;
+    } while (number < 1);
+    return number;
+}
+// Optimized algorithmic core utilizing mid-boundary loops
+enNumberType isPerfectNumber(long long number)
+{
+    long long sum = 0;
+    long long middle = number / 2;
+    // Loop optimized to execute strictly up to the mid-point vector
+    for (long long i = 1; i <= middle; i++)
+    {
+        if (number % i == 0)
+        {
+            sum += i;
+        }
+    }
+    if (number == sum)
+    {
+        return enNumberType::perfect;
+    }
+    else
+    {
+        return enNumberType::Notperfect;
+    }
+}
+// Iterates across range slots and renders verified perfect values
+void PrintResults(long long number)
+{
+    cout << "\nOptimized Perfect Numbers from 6 to " << number << " are:\n";
+
+    // Boundary adjusted to '<=' to ensure upper limit inclusion
+    for (long long i = 6; i <= number; i++)
+    {
+        if (isPerfectNumber(i) == enNumberType::perfect)
+        {
+            cout << i << "\t";
+        }
+    }
+
+    cout << "\n";
+}
+int main()
+{
+    PrintResults(ReadPositiveNumber("Please enter positive number: "));
+    return 0;
+}
