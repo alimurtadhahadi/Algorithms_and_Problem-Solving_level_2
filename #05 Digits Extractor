@@ -18,6 +18,17 @@
 #include <string>
 using namespace std;
 // Extracts and displays digits sequentially from right to left
+long ReadPostiveNumber(string Message)
+{
+	long Number;
+	do
+	{
+		cout << Message;
+		cin >> Number;
+	} while (Number <= 0);
+	return Number;
+}
+
 void PrintDigitsInReverse(long number)
 {
     long remainder = 0;
@@ -34,8 +45,8 @@ void PrintDigitsInReverse(long number)
 }
 int main()
 {
-    // Local execution node entry
-    PrintDigitsInReverse(12345);
+
+    PrintDigitsInReverse(ReadPostiveNumber("Please enter a positive number :"));
 
     return 0;
 }
