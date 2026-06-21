@@ -23,7 +23,7 @@ This table systematically tracks my roadmap execution from Problem #01 to #50. E
 
 | Problem ID | Problem Title | Implementation Status | Source Code Link |
 | :---: | :--- | :---: | :---: |
-| `#01` | Multiplication Table From 1 to 10 | 🟢 Completed | [View Code](./Implement multiplication table from 1 to 10.cpp) |
+| `#01` | Multiplication Table From 1 to 10 | 🟢 Completed | [View Code](./#01 Multiplication Table From 1 to 10.cpp) |
 | `#02` | Prime Numbers From 1 to N | 🟡 Next Up | [Pending] |
 | `#03` | Perfect Number Check | ⚪ Scheduled | [Pending] |
 | `#04` | Perfect Numbers From 1 to N | ⚪ Scheduled | [Pending] |
