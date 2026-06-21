@@ -1,0 +1,57 @@
+/*
+=============|===================== ⚙️ ﷽ ===================================
+  [PROBLEM]  │  #06-Sum of Digits
+  [CONTEXT]  │  Course: ProgrammingAdvices (Algorithms Level 2)
+  -----------|-------------------------------------------------------------
+  [AUTHOR]   │  Ali_Dev (@Ali_DevCode_Lab)
+  [DATE]     │  June 22, 2026 (Monday)
+  -----------|-------------------------------------------------------------
+  [DESC]     │  Extracts positional digits from a positive integer
+             │  and calculates their mathematical summation.
+  -----------|-------------------------------------------------------------
+  [HUBS]     │  Telegram : t.me/Ali_DevCode_Lab
+             │  YouTube  : Ali_Dev_Hub
+             │  GitHub   : alimurtadhahadi
+=============|=============================================================
+*/
+#include <iostream>
+#include <string>
+using namespace std;
+// Function to read and validate a strict positive long integer stream
+long ReadPostiveNumber(string Message)
+{
+    long Number;
+    do
+    {
+        cout << Message;
+        cin >> Number;
+    } while (Number <= 0); // Re-loops if number is negative or zero
+
+    return Number;
+}
+// core mathematical engine that extracts digits and computes the sum
+long SumOfDigits(long Number)
+{
+    long remainder = 0;
+    long sum = 0;
+    while (Number > 0)
+    {
+        remainder = Number % 10; // 1. Extract the least significant digit
+        Number = Number / 10;    // 2. Truncate the processed digit from the number
+        sum += remainder;        // 3. Accumulate the digit value into the sum buffer
+    }
+    return sum;
+}
+// Handler function to process input and display the final summation matrix
+void PrintSumOfDigits()
+{
+    int sum = SumOfDigits(ReadPostiveNumber("Please enter a positive Number : "));
+    cout << "\nSum Of Digits = " << sum << endl;
+}
+int main()
+{
+    // Local execution node initiation
+    PrintSumOfDigits();
+
+    return 0;
+}
