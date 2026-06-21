@@ -1,0 +1,41 @@
+/*
+=============|===================== ⚙️ ﷽ ===================================
+  [PROBLEM]  │  #05-Digits Extractor (Problem #31)
+  [CONTEXT]  │  Course: ProgrammingAdvices (Algorithms Level 2)
+  -----------|-------------------------------------------------------------
+  [AUTHOR]   │  Ali_Dev 
+  [DATE]     │  June 21, 2026 (Sunday)
+  -----------|-------------------------------------------------------------
+  [DESC]     │  Extracts and prints digits from right-to-left
+             │  using sequential base-10 modulo and division loops.
+  -------------------------------------------------------------------------
+  [HUBS]     │  Telegram : t.me/Ali_DevCode_Lab
+             │  YouTube  : (@Ali_DevCode_Lab)
+             │  GitHub   : alimurtadhahadi
+===========================================================================
+*/
+#include <iostream>
+#include <string>
+using namespace std;
+// Extracts and displays digits sequentially from right to left
+void PrintDigitsInReverse(long number)
+{
+    long remainder = 0;
+
+    while (number > 0)
+    {
+        // Capture the last digit (Least Significant Digit) using modulo 10
+        remainder = number % 10;
+        // Remove the processed last digit using integer division
+        number = number / 10;
+        // Render the captured digit to the console buffer
+        cout << remainder << endl;
+    }
+}
+int main()
+{
+    // Local execution node entry
+    PrintDigitsInReverse(12345);
+
+    return 0;
+}
