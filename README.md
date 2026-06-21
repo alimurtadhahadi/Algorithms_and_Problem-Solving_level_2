@@ -25,7 +25,7 @@ This table systematically tracks my roadmap execution from Problem #01 to #50. E
 | :---: | :--- | :---: | :---: |
 | `#01` | Multiplication Table From 1 to 10 | 🟢 Completed | [View Code](./%2301%20Multiplication%20Table%20From%201%20to%2010) |
 | `#02` | Prime Numbers From 1 to N | 🟢 Completed | [Veiw Code](./%232%20Prime%20Numbers%20Range%20Finder) |
-| `#03` | Perfect Number Check | ⚪ Scheduled | [Pending] |
+| `#03` | Perfect Number Check | 🟢 Completed | [Veiw Code](./%2303%20Perfect%20Number%20Checker) |
 | `#04` | Perfect Numbers From 1 to N | ⚪ Scheduled | [Pending] |
 | `#05` | Digits in Reverse Order | ⚪ Scheduled | [Pending] |
 
