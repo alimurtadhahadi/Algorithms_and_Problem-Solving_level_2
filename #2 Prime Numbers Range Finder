@@ -1,0 +1,69 @@
+/*
+======================================================================
+⚙️ Project      : #2-Prime Numbers Range Finder (Level 2 Logic)
+👤 Author       : Ali_Dev (@Ali_Dev-Code-Lab)
+📅 Date         : June 21, 2026
+📆 Day          : Sunday
+🌐 Channel URL  : https://www.youtube.com/channel/UCaSc-7rRD4t0fVPI67UErzQ
+📦 GitHub Hub   : https://github.com/alimurtadhahadi
+📝 Description  : High-performance prime sequence tracker using isolated scopes.
+======================================================================
+*/
+#include <iostream>
+#include <string>
+using namespace std;
+// User-defined enum architecture for strict type safety
+enum enNumberType
+{
+    Prime = 1,
+    NotPrime = 2
+};
+// Validates and retrieves a strictly positive integer from the stream
+int ReadPositiveNumber(string message)
+{
+    int number = 0;
+    do
+    {
+        cout << message;
+        cin >> number;
+    } while (number < 1);
+    return number;
+}
+// Interrogates the memory to evaluate prime numerical properties
+enNumberType CheckNumber(int number)
+{
+    if (number < 2)
+    {
+        return enNumberType::NotPrime;
+    }
+    int middle = number / 2;
+    for (int counter = 2; counter <= middle; counter++)
+    {
+        if (number % counter == 0)
+        {
+            return enNumberType::NotPrime;
+        }
+    }
+    return enNumberType::Prime;
+}
+// Sequences and prints validated prime entries directly to the console
+void PrintPrimeNumbers(int number)
+{
+    cout << "\nPrime Numbers from 1 To " << number << " are :\n";
+    // Loop optimized to start from 2, since 1 is fundamentally non-prime
+    for (int i = 2; i <= number; i++)
+    {
+        if (CheckNumber(i) == enNumberType::Prime)
+        {
+            cout << i << "  ";
+        }
+    }
+    cout << "\n";
+}
+int main()
+{
+    int targetLimit = ReadPositiveNumber("Please enter positive number: ");
+    PrintPrimeNumbers(targetLimit);
+
+    return 0;
+}
