@@ -1,0 +1,68 @@
+/*
+======================================================================
+⚙️ Project      : #3-Perfect Number Checker (Level 2 Logic Architecture)
+👤 Author       : Ali_Dev (@Ali_Dev-Code-Lab)
+📅 Date         : June 21, 2026
+📆 Day          : Sunday
+🌐 YouTube Hub  : https://www.youtube.com/channel/UCaSc-7rRD4t0fVPI67UErzQ
+📦 GitHub Hub   : https://github.com/alimurtadhahadi
+📢 Telegram Hub : https://t.me/Ali_DevCode_Lab
+📝 Description  : High-performance structural optimization for perfect number mapping.
+======================================================================
+*/
+#include <iostream>
+#include <string>
+using namespace std;
+// Strictly typed enumeration to handle semantic scoring results
+enum enNumberType
+{
+    perfect = 1,
+    Notperfect = 2
+};
+// Validates and extracts a clean positive integer from standard input
+int ReadPositiveNumber(string message)
+{
+    int number = 0;
+    do
+    {
+        cout << message;
+        cin >> number;
+    } while (number < 1);
+    return number;
+}
+// Algorithmic core that calculates divisors and checks mathematical perfection
+enNumberType isPerfectNumber(int number)
+{
+    int sum = 0;
+    // Loops through and captures all exact divisors below the target integer
+    for (int i = 1; i < number; i++)
+    {
+        if (number % i == 0)
+        {
+            sum += i;
+        }
+    }
+    // Interrogates equality between the sum of divisors and original value
+    if (number == sum)  {
+        return enNumberType::perfect;
+    }
+    else  {
+        return enNumberType::Notperfect;
+    }
+}
+// Interfaces execution results cleanly to the end-user terminal console
+void PrintResults(int number)
+{
+    if (isPerfectNumber(number) == enNumberType::perfect){
+        cout << "The Number " << number << " is Perfect\n";
+    }
+    else{
+        cout << "The Number " << number << " is not Perfect\n";
+    }
+}
+int main()
+{
+    PrintResults(ReadPositiveNumber("Please enter positive number: "));
+
+    return 0;
+}
