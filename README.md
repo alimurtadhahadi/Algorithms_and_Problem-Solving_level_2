@@ -33,6 +33,16 @@ This table systematically tracks my roadmap execution from Problem #01 to #50. E
 | `#08` | Digit Frequency (Specific Check) | 🟢 Completed | [Veiw Code](./%2308%20Digit%20Frequency) |
 | `#09` | Print All Digits Frequency | 🟢 Completed | [Veiw Code](./%2309%20Print%20All%20Digits%20Frequency) |
 | `#10` | Print Digits in Original Order | 🟢 Completed | [Veiw Code](./%2310%20Print%20Digits%20in%20Original%20Order) |
+| `#11` | Palindrome Number Check | 🟢 Completed | [View Code](./11_Palindrome_Number) |
+| `#12` | Inverted Number Pattern | 🟡 In Progress | [View Code](./12_Inverted_Number_Pattern) |
+| `#13` | Number Pattern | ⏳ Upcoming | [View Code](./13_Number_Pattern) |
+| `#14` | Inverted Letter Pattern | ⏳ Upcoming | [View Code](./14_Inverted_Letter_Pattern) |
+| `#15` | Letter Pattern | ⏳ Upcoming | [View Code](./15_Letter_Pattern) |
+| `#16` | All Words from AAA to ZZZ | ⏳ Upcoming | [View Code](./16_All_Words_AAA_to_ZZZ) |
+| `#17` | Guess a 3-Letter Password | ⏳ Upcoming | [View Code](./17_Guess_3_Letter_Password) |
+| `#18` | Encrypt/Decrypt Text | ⏳ Upcoming | [View Code](./18_Encrypt_Decrypt_Text) |
+| `#19` | Random Number From Min to Max | ⏳ Upcoming | [View Code](./19_Random_Number_Min_Max) |
+| `#20` | Random Character Generator | ⏳ Upcoming | [View Code](./20_Random_Character_Generator) |
 
 *Note: The status index upgrades dynamically as files migrate from local repositories onto this remote cloud terminal storage.*
 
