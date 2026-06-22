@@ -1,0 +1,60 @@
+/*
+=================================== ⚙️ ﷽ ===================================
+  [PROBLEM] │ #10-Print Digits in Original Order
+  ----------|---------------------------------------------------------------
+  [CONTEXT] │ Course: ProgrammingAdvices (Algorithms Level 2)
+  ----------|---------------------------------------------------------------
+  [AUTHOR]  │ Ali_Dev (@Ali_DevCode_Lab)
+  ----------|---------------------------------------------------------------
+  [DATE]    │ June 22, 2026 (Monday)
+  ----------|---------------------------------------------------------------
+  [DESC]    │ Reverses a positive integer first, then extracts its digits
+            | sequentially to render them in their original left-to-right order.
+  ----------|---------------------------------------------------------------
+  [URL]     │ TG: t.me/Ali_DevCode_Lab │ YT: youtube.com/Ali_Dev_Hub │ GH: github.com/alimurtadhahadi
+===========================================================================
+*/
+#include <iostream>
+#include <string>
+using namespace std;
+// Function to read and validate a strict positive long long integer stream
+long long ReadPositiveNumber(string Message)
+{
+    long long Number;
+    do
+    {
+        cout << Message;
+        cin >> Number;
+    } while (Number <= 0); // Re-loops if entry violates positive boundaries
+    return Number;
+}
+// Core mathematical algorithm to reverse and compile digits
+long long ReverseNumber(long long number)
+{
+    long long remainder = 0;
+    long long Number2 = 0;
+    while (number > 0)
+    {
+        remainder = number % 10; // Extract the last digit
+        number = number / 10;    // Drop the processed digit
+        Number2 = Number2 * 10 + remainder; // Shift older digits left and append remainder
+    }
+    return Number2;
+}
+// Function to extract digits and print them line-by-line
+void PrintDigits(long long Number)
+{
+    long long remainder = 0;
+    while (Number > 0)
+    {
+        remainder = Number % 10; // Extract the lowest positional digit
+        Number = Number / 10;    // Remove the processed digit from the stream
+        cout << remainder << endl; // Output the digit to the console screen
+    }
+}
+int main()
+{
+    // Nested execution pipeline passing arguments sequentially matching the signature
+    PrintDigits(ReverseNumber(ReadPositiveNumber("Please enter a positive number : ")));
+    return 0;
+}
