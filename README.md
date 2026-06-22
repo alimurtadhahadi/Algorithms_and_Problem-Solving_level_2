@@ -33,7 +33,7 @@ This table systematically tracks my roadmap execution from Problem #01 to #50. E
 | `#08` | Digit Frequency (Specific Check) | 🟢 Completed | [Veiw Code](./%2308%20Digit%20Frequency) |
 | `#09` | Print All Digits Frequency | 🟢 Completed | [Veiw Code](./%2309%20Print%20All%20Digits%20Frequency) |
 | `#10` | Print Digits in Original Order | 🟢 Completed | [Veiw Code](./%2310%20Print%20Digits%20in%20Original%20Order) |
-| `#11` | Palindrome Number Check | 🟢 Completed | [View Code](./11_Palindrome_Number) |
+| `#11` | Palindrome Number Check | 🟢 Completed | [View Code](./%2311%20Palindrome%20Number%20Check) |
 | `#12` | Inverted Number Pattern | 🟡 In Progress | [View Code](./12_Inverted_Number_Pattern) |
 | `#13` | Number Pattern | ⏳ Upcoming | [View Code](./13_Number_Pattern) |
 | `#14` | Inverted Letter Pattern | ⏳ Upcoming | [View Code](./14_Inverted_Letter_Pattern) |
