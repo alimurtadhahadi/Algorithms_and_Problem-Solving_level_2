@@ -1,0 +1,60 @@
+/*
+=================================== ⚙️ ﷽ ===================================
+  [PROBLEM] │ #08-Digit Frequency
+  ----------|---------------------------------------------------------------
+  [CONTEXT] │ Course: ProgrammingAdvices (Algorithms Level 2)
+  ----------|---------------------------------------------------------------
+  [AUTHOR]  │ Ali_Dev (@Ali_DevCode_Lab)
+  ----------|---------------------------------------------------------------
+  [DATE]    │ June 22, 2026 (Monday)
+  ----------|---------------------------------------------------------------
+  [DESC]    │ Counts the frequency of a specific digit inside a large number.
+  ----------|---------------------------------------------------------------
+  [URL]     │ TG: t.me/Ali_DevCode_Lab │ YT: youtube.com/Ali_Dev_Hub │ GH: github.com/alimurtadhahadi
+===========================================================================
+*/
+#include <iostream>
+#include <string>
+using namespace std;
+// Function to read and validate a strict positive long integer stream
+long ReadPositiveNumber(string Message)
+{
+    long Number;in
+    do
+    {
+        cout << Message;
+        cin >> Number;
+    } while (Number <= 0); // Re-loops if entry is zero or negative
+    return Number;
+}
+// Core algorithm to evaluate specific digit occurrence frequency
+long CountDigitFrequency(long Number, short DigitToCheck)
+{
+    long remainder = 0;
+    int FreqCount = 0;
+    while (Number > 0)
+    {
+        remainder = Number % 10; // Isolate the lowest positional digit
+        Number = Number / 10;    // Remove the processed digit from the stream
+        // Evaluate if the extracted digit matches the targeted search parameter
+        if (DigitToCheck == remainder)
+        {
+            FreqCount++; // Increment the occurrence counter
+        }
+    }
+    return FreqCount;
+}
+// Handler function to process and link parameters correctly
+void PrintDigitFrequency()
+{
+    long Number = ReadPositiveNumber("Please enter the main number : ");
+    short DigitToCheck = ReadPositiveNumber("Please enter one digit to check : ");
+    // Pass arguments sequentially matching the function declaration signature
+    cout << "\nDigit " << DigitToCheck << " Frequency is " << CountDigitFrequency(Number, DigitToCheck) << " Time(s).\n";
+}
+int main()
+{
+    // Execution pipeline entry point
+    PrintDigitFrequency();
+    return 0;
+}
