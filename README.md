@@ -32,7 +32,7 @@ This table systematically tracks my roadmap execution from Problem #01 to #50. E
 | `#07` | Reverse Number | 🟢 Completed | [Veiw Code](./%2307%20Reverse%20Number) |
 | `#08` | Digit Frequency (Specific Check) | 🟢 Completed | [Veiw Code](./%2308%20Digit%20Frequency) |
 | `#09` | Print All Digits Frequency | 🟢 Completed | [Veiw Code](./%2309%20Print%20All%20Digits%20Frequency) |
-| `#10` | Print Digits in Original Order | ⏳ Upcoming | [Veiw Code](./10_Digits_Original_Order) |
+| `#10` | Print Digits in Original Order | 🟢 Completed | [Veiw Code](./%2310%20Print%20Digits%20in%20Original%20Order) |
 
 *Note: The status index upgrades dynamically as files migrate from local repositories onto this remote cloud terminal storage.*
 
