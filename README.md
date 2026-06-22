@@ -29,7 +29,7 @@ This table systematically tracks my roadmap execution from Problem #01 to #50. E
 | `#04` | Perfect Numbers From 1 to N | 🟢 Completed | [Veiw Code](./%2304%20Optimized%20Perfect%20Number%20Range%20Finder) |
 | `#05` | Digits in Reverse Order | 🟢 Completed | [Veiw Code](./%2305%20Digits%20Extractor) |
 | `#06` | Sum of Digits | 🟢 Completed | [Veiw Code](./%2306%20Sum%20of%20Digits) |
-| `#07` | Reverse Number | ⏳ Upcoming | [Veiw Code](./07_Reverse_Number) |
+| `#07` | Reverse Number | 🟢 Completed | [Veiw Code](./%2307%20Reverse%20Number) |
 | `#08` | Digit Frequency (Specific Check) | ⏳ Upcoming | [Veiw Code](./08_Digit_Frequency) |
 | `#09` | Print All Digits Frequency | ⏳ Upcoming | [Veiw Code](./09_All_Digits_Frequency) |
 | `#10` | Print Digits in Original Order | ⏳ Upcoming | [Veiw Code](./10_Digits_Original_Order) |
