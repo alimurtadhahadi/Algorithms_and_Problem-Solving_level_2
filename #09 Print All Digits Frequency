@@ -1,0 +1,70 @@
+/*
+=================================== ⚙️ ﷽ ===================================
+  [PROBLEM] │ #09-Print All Digits Frequency
+  ----------|---------------------------------------------------------------
+  [CONTEXT] │ Course: ProgrammingAdvices (Algorithms Level 2)
+  ----------|---------------------------------------------------------------
+  [AUTHOR]  │ Ali_Dev (@Ali_DevCode_Lab)
+  ----------|---------------------------------------------------------------
+  [DATE]    │ June 22, 2026 (Monday)
+  ----------|---------------------------------------------------------------
+  [DESC]    │ Scans a large integer and prints the recurrence count for all
+            | contained digits from 0 to 9 sequentially.
+  ----------|---------------------------------------------------------------
+  [URL]     │ TG: t.me/Ali_DevCode_Lab │ YT: youtube.com/Ali_Dev_Hub │ GH: github.com/alimurtadhahadi
+===========================================================================
+*/
+#include <iostream>
+#include <string>
+using namespace std;
+// Function to read and validate a strict positive long long integer stream
+long long ReadPositiveNumber(string Message)
+{
+    long long Number;
+    do
+    {
+        cout << Message;
+        cin >> Number;
+    } while (Number <= 0); // Re-loops if entry violates positive scalar boundaries
+    return Number;
+}
+// Core algorithm to evaluate specific digit occurrence frequency
+long long CountDigitFrequency(long long Number, short DigitToCheck)
+{
+    long long remainder = 0;
+    short FreqCount = 0;
+    while (Number > 0)
+    {
+        remainder = Number % 10; // Extract the rightmost positional digit
+        Number = Number / 10;    // Shift the number right to drop the evaluated digit
+        if (DigitToCheck == remainder)
+        {
+            FreqCount++; // Increment count if target parameter matches remainder
+        }
+    }
+    return FreqCount;
+}
+// Outer loop engine scanning digits 0 through 9 sequentially
+void PrintAllDigitsFrequencey(long long Number)
+{
+    cout << endl;
+    for (short i = 0; i < 10; i++)
+    {
+        short DigitFrequency = 0;
+        // Invoke the core counter node passing the current loop index
+        DigitFrequency = CountDigitFrequency(Number, i);
+        // Render metrics only for digits that exist inside the number
+        if (DigitFrequency > 0)
+        {
+            cout << "Digit " << i << " Frequency is " << DigitFrequency << " Time(s).\n";
+        }
+    }
+}
+int main()
+{
+    // Local memory allocation for primary scalar storage
+    long long Number = ReadPositiveNumber("Please enter the main number : ");
+    // Execute the nested frequency tracking matrix
+    PrintAllDigitsFrequencey(Number);
+    return 0;
+}
