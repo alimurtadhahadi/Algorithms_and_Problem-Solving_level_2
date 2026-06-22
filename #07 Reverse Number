@@ -1,0 +1,55 @@
+/*
+=================================== ⚙️ ﷽ ===================================
+  [PROBLEM] │ #07-Reverse Number 
+  ----------|---------------------------------------------------------------
+  [CONTEXT] │ Course: ProgrammingAdvices (Algorithms Level 2)
+  ----------|---------------------------------------------------------------
+  [AUTHOR]  │ Ali_Dev (@Ali_DevCode_Lab)
+  ----------|---------------------------------------------------------------
+  [DATE]    │ June 22, 2026 (Monday)
+  ----------|---------------------------------------------------------------
+  [DESC]    │ Mathematically reverses an integer and reconstructs it inside RAM.
+  ----------|---------------------------------------------------------------
+  [URL]     │ TG: t.me/Ali_DevCode_Lab │ YT: youtube.com/Ali_Dev_Hub │ GH: github.com/alimurtadhahadi
+===========================================================================
+*/
+#include <iostream>
+#include <string>
+using namespace std;
+// Function to read and validate a strict positive long integer stream
+long ReadPostiveNumber(string Message)
+{
+    long Number;
+    do
+    {
+        cout << Message;
+        cin >> Number;
+    } while (Number <= 0); // Re-loops if entry is zero or negative
+    return Number;
+}
+// Core mathematical algorithm to reverse and compile digits
+long ReverseNumber(long Number)
+{
+    long remainder = 0;
+    long Number2 = 0;
+    while (Number > 0)
+    {
+        remainder = Number % 10; // 1. Isolate the last digit (LSD)
+        Number = Number / 10;    // 2. Truncate the digit from the original number
+        Number2 = Number2 * 10 + remainder; // 3. Shift older digits left and append new remainder
+    }
+    return Number2;
+}
+// Handler function to process the pipeline output
+void PrintNumber2()
+{
+    long Number2 = ReverseNumber(ReadPostiveNumber("Please enter a positive Number : "));
+    cout << "\nReverse is = " << Number2 << endl;
+}
+int main()
+{
+    // Local execution node entry
+    PrintNumber2();
+
+    return 0;
+}
