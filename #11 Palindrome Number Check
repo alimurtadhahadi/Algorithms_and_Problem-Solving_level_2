@@ -1,0 +1,67 @@
+/*
+=================================== ⚙️ ﷽ ===================================
+  [PROBLEM] │ #11-Palindrome Number Check (Problem #11)
+  ----------|---------------------------------------------------------------
+  [CONTEXT] │ Course: ProgrammingAdvices (Algorithms Level 2)
+  ----------|---------------------------------------------------------------
+  [AUTHOR]  │ Ali_Dev (@Ali_DevCode_Lab)
+  ----------|---------------------------------------------------------------
+  [DATE]    │ June 22, 2026 (Monday)
+  ----------|---------------------------------------------------------------
+  [DESC]    │ Evaluates if a positive integer reads the same backward as forward
+            | by mathematically comparing the original value to its inversion.
+  ----------|---------------------------------------------------------------
+  [URL]     │ TG: t.me/Ali_DevCode_Lab │ YT: youtube.com/Ali_Dev_Hub │ GH: github.com/alimurtadhahadi
+===========================================================================
+*/
+#include <iostream>
+#include <string>
+using namespace std;
+// Function to read and validate a strict positive long long integer stream
+long long ReadPositiveNumber(string Message)
+{
+    long long Number;
+    do
+    {
+        cout << Message;
+        cin >> Number;
+    } while (Number <= 0); // Re-loops if entry violates positive scalar boundaries
+    return Number;
+}
+// Core mathematical algorithm to reverse and return the integer value
+long long ReverseNumber(long long Number)
+{
+    long long remainder = 0;
+    long long Number2 = 0;
+    while (Number > 0)
+    {
+        remainder = Number % 10; // Extract the lowest positional digit
+        Number = Number / 10;    // Remove the processed digit from the stream
+        Number2 = Number2 * 10 + remainder; // Shift older digits left and append remainder
+    }
+    return Number2;
+}
+// Boolean function checking if the original number matches its reversed image
+bool IsPalindromeNumber(long long Number)
+{
+    // Pass by value ensures the original 'Number' register remains unaltered here
+    return (ReverseNumber(Number) == Number);
+}
+// Handler function to process execution outcomes and render results
+void PrintResults()
+{
+    if (IsPalindromeNumber(ReadPositiveNumber("Please enter a positive number? ")))
+    {
+        cout << "\nYes, it is a Palindrome number.\n";
+    }
+    else
+    {
+        cout << "\nNo, it is NOT a Palindrome number.\n";
+    }
+}
+int main()
+{
+    // Local execution node entry
+    PrintResults();
+    return 0;
+}
