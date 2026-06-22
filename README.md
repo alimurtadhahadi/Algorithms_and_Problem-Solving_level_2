@@ -30,7 +30,7 @@ This table systematically tracks my roadmap execution from Problem #01 to #50. E
 | `#05` | Digits in Reverse Order | 🟢 Completed | [Veiw Code](./%2305%20Digits%20Extractor) |
 | `#06` | Sum of Digits | 🟢 Completed | [Veiw Code](./%2306%20Sum%20of%20Digits) |
 | `#07` | Reverse Number | 🟢 Completed | [Veiw Code](./%2307%20Reverse%20Number) |
-| `#08` | Digit Frequency (Specific Check) | ⏳ Upcoming | [Veiw Code](./08_Digit_Frequency) |
+| `#08` | Digit Frequency (Specific Check) | 🟢 Completed | [Veiw Code](./%2308%20Digit%20Frequency) |
 | `#09` | Print All Digits Frequency | ⏳ Upcoming | [Veiw Code](./09_All_Digits_Frequency) |
 | `#10` | Print Digits in Original Order | ⏳ Upcoming | [Veiw Code](./10_Digits_Original_Order) |
 
