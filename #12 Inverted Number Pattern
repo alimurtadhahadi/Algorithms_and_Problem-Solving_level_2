@@ -1,0 +1,51 @@
+/*
+=================================== ⚙️ ﷽ ===================================
+  [PROBLEM] │ #12-Inverted Number Pattern 
+  ----------|---------------------------------------------------------------
+  [CONTEXT] │ Course: ProgrammingAdvices (Algorithms Level 2)
+  ----------|---------------------------------------------------------------
+  [AUTHOR]  │ Ali_Dev (@Ali_DevCode_Lab)
+  ----------|---------------------------------------------------------------
+  [DATE]    │ June 23, 2026 (Tuesday)
+  ----------|---------------------------------------------------------------
+  [DESC]    │ Generates a 2D inverted numeric grid pattern where row values
+  ----------| dynamically dictate the inner column iteration bounds.
+  ----------|---------------------------------------------------------------
+  [URL]     │ TG: t.me/Ali_DevCode_Lab │ YT: youtube.com/Ali_Dev_Hub │ GH: github.com/alimurtadhahadi
+===========================================================================
+*/
+#include <iostream>
+#include <string>
+using namespace std;
+// Function to read and validate a strict positive integer stream
+int ReadPositiveNumber(string Message)
+{
+    int Number;
+    do
+    {
+        cout << Message;
+        cin >> Number;
+    } while (Number <= 0); // Re-loops if entry violates positive boundaries
+    return Number;
+}
+// Function managing nested loops to render the inverted block matrix
+void PrintInvertedNumberPattern(int Number)
+{
+    cout << "\n";
+    // Outer loop controls the horizontal rows (decrements from Number down to 1)
+    for (int i = Number; i >= 1; i--)
+    {
+        // Inner loop controls the vertical columns printed inside the active row
+        for (int j = 1; j <= i; j++)
+        {
+            cout << i << " "; // Print the current row token identifier
+        }
+        cout << endl; // Break row to advance the terminal carriage downward
+    }
+}
+int main()
+{
+    // Execute the nested layout pipeline matrix directly
+    PrintInvertedNumberPattern(ReadPositiveNumber("Please enter positive number : "));
+    return 0;
+}
