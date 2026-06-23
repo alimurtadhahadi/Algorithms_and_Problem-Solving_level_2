@@ -42,7 +42,7 @@ This table systematically tracks my roadmap execution from Problem #01 to #50. E
 | `#16` | All Words from AAA to ZZZ | 🟢 Completed | [View Code](./%2316%20All%20Words%20From%20AAA%20to%20ZZZ%20Using%20String%20Variable) |
 | `#17` | Guess a 3-Letter Password | 🟢 Completed | [View Code](./%2317%20Guess%20a%203-Letter%20Password%20-%20Dual-Case%20Edition) |
 | `#18` | Encrypt/Decrypt Text | 🟢 Completed | [View Code](./%2318%20Encrypt%20%26%20Decrypt%20Text) |
-| `#19` | Random Number From Min to Max | 🟢 Completed | [View Code](./20Random%20Number%20From%20Min%20to%20Max) |
+| `#19` | Random Number From Min to Max | 🟢 Completed | [View Code](./%2319%20Random%20Number%20From%20Min%20to%20Max) |
 | `#20` | Random Character Generator | ⏳ Upcoming | [View Code](./20_Random_Character_Generator) |
 
 *Note: The status index upgrades dynamically as files migrate from local repositories onto this remote cloud terminal storage.*
