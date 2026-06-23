@@ -36,7 +36,7 @@ This table systematically tracks my roadmap execution from Problem #01 to #50. E
 | `#10` | Print Digits in Original Order | 🟢 Completed | [Veiw Code](./%2310%20Print%20Digits%20in%20Original%20Order) |
 | `#11` | Palindrome Number Check | 🟢 Completed | [View Code](./%2311%20Palindrome%20Number%20Check) |
 | `#12` | Inverted Number Pattern | 🟢 Completed | [View Code](./%2312%20Inverted%20Number%20Pattern) |
-| `#13` | Number Pattern | ⏳ Upcoming | [View Code](./13_Number_Pattern) |
+| `#13` | Number Pattern | 🟢 Completed | [View Code](./%2313%20Number%20Pattern) |
 | `#14` | Inverted Letter Pattern | ⏳ Upcoming | [View Code](./14_Inverted_Letter_Pattern) |
 | `#15` | Letter Pattern | ⏳ Upcoming | [View Code](./15_Letter_Pattern) |
 | `#16` | All Words from AAA to ZZZ | ⏳ Upcoming | [View Code](./16_All_Words_AAA_to_ZZZ) |
