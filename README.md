@@ -41,7 +41,7 @@ This table systematically tracks my roadmap execution from Problem #01 to #50. E
 | `#15` | Letter Pattern | 🟢 Completed | [View Code](./%2315%20Letter%20Pattern) |
 | `#16` | All Words from AAA to ZZZ | 🟢 Completed | [View Code](./%2316%20All%20Words%20From%20AAA%20to%20ZZZ%20Using%20String%20Variable) |
 | `#17` | Guess a 3-Letter Password | 🟢 Completed | [View Code](./%2317%20Guess%20a%203-Letter%20Password%20-%20Dual-Case%20Edition) |
-| `#18` | Encrypt/Decrypt Text | ⏳ Upcoming | [View Code](./18_Encrypt_Decrypt_Text) |
+| `#18` | Encrypt/Decrypt Text | 🟢 Completed | [View Code](./%2318%20Encrypt%20%26%20Decrypt%20Text) |
 | `#19` | Random Number From Min to Max | ⏳ Upcoming | [View Code](./19_Random_Number_Min_Max) |
 | `#20` | Random Character Generator | ⏳ Upcoming | [View Code](./20_Random_Character_Generator) |
 
