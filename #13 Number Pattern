@@ -1,0 +1,51 @@
+/*
+=================================== ⚙️ ﷽ ===================================
+  [PROBLEM] │ #13-Number Pattern
+  ----------|---------------------------------------------------------------
+  [CONTEXT] │ Course: ProgrammingAdvices (Algorithms Level 2)
+  ----------|---------------------------------------------------------------
+  [AUTHOR]  │ Ali_Dev (@Ali_DevCode_Lab)
+  ----------|---------------------------------------------------------------
+  [DATE]    │ June 23, 2026 (Tuesday)
+  ----------|---------------------------------------------------------------
+  [DESC]    │ Generates a 2D ascending numeric pyramid pattern where the outer
+            | row index dictates both the print token and the column limits.
+  ----------|---------------------------------------------------------------
+  [URL]     │ TG: t.me/Ali_DevCode_Lab │ YT: youtube.com/Ali_Dev_Hub │ GH: github.com/alimurtadhahadi
+===========================================================================
+*/
+#include <iostream>
+#include <string>
+using namespace std;
+// Function to read and validate a strict positive integer stream
+int ReadPositiveNumber(string Message)
+{
+    int Number;
+    do
+    {
+        cout << Message;
+        cin >> Number;
+    } while (Number <= 0); // Re-loops if entry violates positive boundaries
+    return Number;
+}
+// Function managing nested loops to render the ascending block matrix
+void PrintNumberPattern(int Number)
+{
+    cout << "\n";
+    // Outer loop controls horizontal rows (increments sequentially from 1 up to Number)
+    for (int i = 1; i <= Number; i++)
+    {
+        // Inner loop controls vertical columns printed inside the active row frame
+        for (int j = 1; j <= i; j++)
+        {
+            cout << i << " "; // Print the current row progression identifier
+        }
+        cout << endl; // Push the console carriage to a new line block
+    }
+}
+int main()
+{
+    // Execute the nested layout pipeline matrix directly
+    PrintNumberPattern(ReadPositiveNumber("Please enter positive number : "));
+    return 0;
+}
