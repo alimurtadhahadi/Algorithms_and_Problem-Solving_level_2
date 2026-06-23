@@ -38,7 +38,7 @@ This table systematically tracks my roadmap execution from Problem #01 to #50. E
 | `#12` | Inverted Number Pattern | 🟢 Completed | [View Code](./%2312%20Inverted%20Number%20Pattern) |
 | `#13` | Number Pattern | 🟢 Completed | [View Code](./%2313%20Number%20Pattern) |
 | `#14` | Inverted Letter Pattern | 🟢 Completed | [View Code](./%2314%20Inverted%20Letter%20Pattern) |
-| `#15` | Letter Pattern | ⏳ Upcoming | [View Code](./15_Letter_Pattern) |
+| `#15` | Letter Pattern | 🟢 Completed | [View Code](./%2315%20Letter%20Pattern) |
 | `#16` | All Words from AAA to ZZZ | ⏳ Upcoming | [View Code](./16_All_Words_AAA_to_ZZZ) |
 | `#17` | Guess a 3-Letter Password | ⏳ Upcoming | [View Code](./17_Guess_3_Letter_Password) |
 | `#18` | Encrypt/Decrypt Text | ⏳ Upcoming | [View Code](./18_Encrypt_Decrypt_Text) |
