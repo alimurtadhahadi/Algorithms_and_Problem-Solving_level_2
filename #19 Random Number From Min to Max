@@ -1,0 +1,39 @@
+/*
+=================================== ⚙️ ﷽ ===================================
+  [PROBLEM] │ #19-Random Number From Min to Max
+  ----------|---------------------------------------------------------------
+  [CONTEXT] │ Course: ProgrammingAdvices (Algorithms Level 2)
+  ----------|---------------------------------------------------------------
+  [AUTHOR]  │ Ali_Dev (@Ali_DevCode_Lab)
+  ----------|---------------------------------------------------------------
+  [DATE]    │ June 23, 2026 (Tuesday)
+  ----------|---------------------------------------------------------------
+  [DESC]    │ Deploys a pseudo-random number generator (PRNG) scaled tightly
+  ----------| within user-defined execution boundaries [From, To] using modulo.
+  ----------|---------------------------------------------------------------
+  [URL]     │ TG: t.me/Ali_DevCode_Lab │ YT: youtube.com/Ali_Dev_Hub │ GH: github.com/alimurtadhahadi
+===========================================================================
+*/
+#include <iostream>
+#include <cstdlib>
+#include <ctime>
+using namespace std;
+// Core mathematical function to isolate and scale pseudo-random outputs
+int RandomNumber(int From, int To)
+{
+    // Apply modulo scaling factor followed by secondary shifting offset
+    int randNum = rand() % (To - From + 1) + From;
+    return randNum;
+}
+int main()
+{
+    // Seed the PRNG matrix with the local hardware system clock once at execution boot
+    srand((unsigned)time(NULL));
+    // Output sequential random samples bounded inside the range [1, 10]
+    for (int i = 1; i <= 3; i++)
+    {
+        cout << RandomNumber(1, 10) << "\n";
+    }
+
+    return 0;
+}
