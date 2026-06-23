@@ -1,0 +1,52 @@
+/*
+=================================== ⚙️ ﷽ ===================================
+  [PROBLEM] │ #14-Inverted Letter Pattern 
+  ----------|---------------------------------------------------------------
+  [CONTEXT] │ Course: ProgrammingAdvices (Algorithms Level 2)
+  ----------|---------------------------------------------------------------
+  [AUTHOR]  │ Ali_Dev (@Ali_DevCode_Lab)
+  ----------|---------------------------------------------------------------
+  [DATE]    │ June 23, 2026 (Tuesday)
+  ----------|---------------------------------------------------------------
+  [DESC]    │ Generates a 2D inverted letter matrix using ASCII offsets,
+  ----------| dynamically mapping row values to character representations.
+  ----------|---------------------------------------------------------------
+  [URL]     │ TG: t.me/Ali_DevCode_Lab │ YT: youtube.com/Ali_Dev_Hub │ GH: github.com/alimurtadhahadi
+===========================================================================
+*/
+#include <iostream>
+#include <string>
+using namespace std;
+// Function to read and validate a strict positive integer stream
+int ReadPositiveNumber(string Message)
+{
+    int Number;
+    do
+    {
+        cout << Message;
+        cin >> Number;
+    } while (Number <= 0); // Re-loops if entry violates positive scalar boundaries
+    return Number;
+}
+
+// Function managing nested loops to render the inverted ASCII character block
+void PrintInvertedLetterPattern(int Number)
+{
+    cout << "\n";
+    // Outer loop sets the current ASCII character code (decrements from top char down to 'A')
+    for (int i = 65 + Number - 1; i >= 65; i--)
+    {
+        // Inner loop dictates the columns frequency utilizing Ali's optimized boundary math
+        for (int j = 1; j <= (i - 65 + 1); j++)
+        {
+            cout << char(i) << " "; // Cast integer value directly to its ASCII character glyph
+        }
+        cout << endl; // Break current line execution to advance downward
+    }
+}
+int main()
+{
+    // Execute the nested layout pipeline matrix directly
+    PrintInvertedLetterPattern(ReadPositiveNumber("Please enter positive number : "));
+    return 0;
+}
