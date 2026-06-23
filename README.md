@@ -5,7 +5,7 @@ Welcome to my official core repository for **Algorithms & Problem Solving Level 
 ## 👤 Developer Profile
 * **Author:** Ali_Dev
 * **Channel:** [@Ali_Dev-Code-Lab](https://www.youtube.com/channel/UCaSc-7rRD4t0fVPI67UErzQ)
-* **TG Channel** [Ali_Dev](./t.me/Ali_DevCode_Lab)
+* **TG Channel** [Ali_Dev](https://t.me/Ali_DevCode_Lab)
 * **Curriculum:** Problem Solving Level 2 (Abu-Hadhoud Course Architecture)
 
 ---
