@@ -1,0 +1,120 @@
+/*
+=================================== ⚙️ ﷽ ===================================
+  [PROBLEM] │ #25-Min Number in Array 
+  ----------|---------------------------------------------------------------
+  [CONTEXT] │ Course: ProgrammingAdvices (Algorithms Level 2)
+  ----------|---------------------------------------------------------------
+  [AUTHOR]  │ Ali_Dev (@Ali_DevCode_Lab)
+  ----------|---------------------------------------------------------------
+  [DATE]    │ June 24, 2026 (Wednesday)
+  ----------|---------------------------------------------------------------
+  [DESC]    │ Compiles a secure random matrix, then implements dual linear search
+  ----------| algorithms to isolate both absolute Max and Min scalar parameters.
+  ----------|---------------------------------------------------------------
+  [URL]     │ TG: t.me/Ali_DevCode_Lab │ YT: youtube.com/Ali_Dev_Hub │ GH: github.com/alimurtadhahadi
+===========================================================================
+*/
+#include <iostream>
+#include <cstdlib>
+#include <ctime>
+#include <string>
+
+using namespace std;
+
+// Core mathematical function to isolate and scale pseudo-random outputs
+int RandomNumber(int From, int To)
+{
+    int randNum = rand() % (To - From + 1) + From;
+    return randNum;
+}
+
+// Secure stream driver to capture array sizes strictly bounded within limits
+int ReadArrayLength(string Message, int MaxSize)
+{
+    int Number = 0;
+
+    do
+    {
+        cout << Message;
+        cin >> Number;
+    } while (Number <= 0 || Number > MaxSize);
+
+    return Number;
+}
+
+// Secure system function driven by validated size properties
+void FillArrayWithRandomNumbers(int Arr[100], int& ArrLength)
+{
+    ArrLength = ReadArrayLength("Enter number of elements (1 to 100): ", 100);
+
+    for (int i = 0; i < ArrLength; i++)
+    {
+        Arr[i] = RandomNumber(1, 100);
+    }
+}
+
+// Safe read-only array stream printing 
+void PrintArray(int Arr[100], int ArrLength)
+{
+    for (int i = 0; i < ArrLength; i++)
+    {
+        cout << Arr[i] << " ";
+    }
+    cout << endl;
+}
+
+// Scans the array structure linearly to capture the absolute maximum value
+int MaxNumberInArray(int Arr[100], int ArrLength)
+{
+    int Max = 0; // Temporary champion initializer
+
+    for (int i = 0; i < ArrLength; i++)
+    {
+        if (Arr[i] > Max)
+        {
+            Max = Arr[i];
+        }
+    }
+
+    return Max;
+}
+
+// Scans the array structure linearly to capture the absolute minimum value
+int MinNumberInArray(int Arr[100], int ArrLength)
+{
+    // Initialize minimum variable directly with the first baseline index element
+    int Min = Arr[0];
+
+    // Micro-optimized loop can start from index 1 safely to minimize redundant comparisons
+    for (int i = 1; i < ArrLength; i++)
+    {
+        // Assert active element against current minimum register
+        if (Arr[i] < Min)
+        {
+            Min = Arr[i]; // Overwrite reference with the lower dominant value
+        }
+    }
+
+    return Min;
+}
+
+int main()
+{
+    // Seed the hardware PRNG engine with the dynamic system time metrics
+    srand((unsigned)time(NULL));
+
+    int Arr[100];
+    int ArrLength;
+
+    // Fire secure dynamic data allocation pipelines
+    FillArrayWithRandomNumbers(Arr, ArrLength);
+
+    cout << "\nArray Elements: ";
+    PrintArray(Arr, ArrLength);
+
+    // Output dynamic telemetry metrics directly onto the terminal pipeline
+    cout << "\nMax Number is : " << MaxNumberInArray(Arr, ArrLength);
+    cout << "\nMin Number is : " << MinNumberInArray(Arr, ArrLength) << endl;
+
+    return 0;
+}
