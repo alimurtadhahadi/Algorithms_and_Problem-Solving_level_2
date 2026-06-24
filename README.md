@@ -45,7 +45,7 @@ This table systematically tracks my roadmap execution from Problem #01 to #50. E
 | `#19` | Random Number From Min to Max | 🟢 Completed | [View Code](./%2319%20Random%20Number%20From%20Min%20to%20Max) |
 | `#20` | Random Character Generator | 🟢 Completed | [View Code](./%2320%20Random%20Character%20Generator) |
 | `#21` | Generate Keys | 🟢 Completed | [View Code](./%2321%20Generate%20Keys) |
-| `#22` | Repeated Elements Count in Array | ⏳ In Progress | [View Code](./%2322%20Repeated%20Elements%20Count) |
+| `#22` | Repeated Elements Count in Array | 🟢 Completed | [View Code](./%2322%20Repeated%20Elements%20Count%20in%20Array) |
 | `#23` | Fill Array with Random Numbers | ⏳ In Progress | [View Code](./%2323%20Fill%20Array%20with%20Random) |
 | `#24` | Max Number in Array | ⏳ In Progress | [View Code](./%2324%20Max%20Number%20in%20Array) |
 | `#25` | Min Number in Array | ⏳ In Progress | [View Code](./%2325%20Min%20Number%20in%20Array) |
