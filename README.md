@@ -49,7 +49,7 @@ This table systematically tracks my roadmap execution from Problem #01 to #50. E
 | `#23` | Fill Array with Random Numbers | 🟢 Completed | [View Code](./%2323%20Fill%20Array%20with%20Random%20Numbers%20Securely) |
 | `#24` | Max Number in Array | 🟢 Completed | [View Code](./%2324%20Max%20Number%20in%20Array) |
 | `#25` | Min Number in Array | 🟢 Completed | [View Code](./%2325%20Min%20Number%20in%20Array) |
-| `#26` | Sum of Random Array | ⏳ In Progress | [View Code](./%2326%20Sum%20of%20Random%20Array) |
+| `#26` | Sum of Random Array | 🟢 Completed | [View Code](./%2326%20Sum%20of%20Random%20Array) |
 | `#27` | Average of Random Array | ⏳ In Progress | [View Code](./%2327%20Average%20of%20Random%20Array) |
 | `#28` | Copy Array | ⏳ In Progress | [View Code](./%2328%20Copy%20Array) |
 | `#29` | Copy Only Prime Numbers to Another Array | ⏳ In Progress | [View Code](./%2329%20Copy%20Only%20Prime%20Numbers) |
