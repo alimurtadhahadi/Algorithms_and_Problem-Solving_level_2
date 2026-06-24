@@ -1,0 +1,80 @@
+/*
+=================================== ⚙️ ﷽ ===================================
+  [PROBLEM] │ #23-Fill Array with Random Numbers Securely
+  ----------|---------------------------------------------------------------
+  [AUTHOR]  │ Ali_Dev (@Ali_DevCode_Lab)
+  ----------|---------------------------------------------------------------
+  [DATE]    │ June 24, 2026 (Wednesday)
+  ----------|---------------------------------------------------------------
+  [DESC]    │ Fills an array with random numbers [1, 100] while introducing
+  ----------| a baseline input ceiling filter to prevent buffer overflows.
+  ----------|---------------------------------------------------------------
+  [URL]     │ TG: t.me/Ali_DevCode_Lab │ YT: youtube.com/Ali_Dev_Hub │ GH: github.com/alimurtadhahadi
+===========================================================================
+*/
+#include <iostream>
+#include <cstdlib>
+#include <ctime>
+#include <string>
+
+using namespace std;
+
+// Core mathematical function to isolate and scale pseudo-random outputs
+int RandomNumber(int From, int To)
+{
+    int randNum = rand() % (To - From + 1) + From;
+    return randNum;
+}
+
+// Secure stream driver to capture array sizes strictly bounded within limits
+int ReadArrayLength(string Message, int MaxSize)
+{
+    int Number = 0;
+
+    do
+    {
+        cout << Message;
+        cin >> Number;
+    } while (Number <= 0 || Number > MaxSize); // Invariant ceiling check mapping
+
+    return Number;
+}
+
+// Secure system function driven by validated size properties
+void FillArrayWithRandomNumbers(int Arr[100], int& ArrLength)
+{
+    // Restrict inputs strictly between [1, 100] to safeguard stack memory
+    ArrLength = ReadArrayLength("Enter number of elements (1 to 100): ", 100);
+
+    for (int i = 0; i < ArrLength; i++)
+    {
+        Arr[i] = RandomNumber(1, 100);
+    }
+}
+
+// Safe read-only array stream printing 
+void PrintArray(int Arr[100], int ArrLength)
+{
+    for (int i = 0; i < ArrLength; i++)
+    {
+        cout << Arr[i] << " ";
+    }
+    cout << endl;
+}
+
+int main()
+{
+    // Seed the hardware PRNG engine with the dynamic system time metrics
+    srand((unsigned)time(NULL));
+
+    int Arr[100];
+    int ArrLength;
+
+    // Fire secure dynamic data allocation pipelines
+    FillArrayWithRandomNumbers(Arr, ArrLength);
+
+    cout << "\nArray Elements: ";
+    PrintArray(Arr, ArrLength);
+
+    return 0;
+}
