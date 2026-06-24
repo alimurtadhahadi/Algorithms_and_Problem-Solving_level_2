@@ -44,6 +44,16 @@ This table systematically tracks my roadmap execution from Problem #01 to #50. E
 | `#18` | Encrypt/Decrypt Text | 🟢 Completed | [View Code](./%2318%20Encrypt%20%26%20Decrypt%20Text) |
 | `#19` | Random Number From Min to Max | 🟢 Completed | [View Code](./%2319%20Random%20Number%20From%20Min%20to%20Max) |
 | `#20` | Random Character Generator | 🟢 Completed | [View Code](./%2320%20Random%20Character%20Generator) |
+| `#21` | Generate Keys | 🟢 Completed | [View Code](./%2321%20Generate%20Keys) |
+| `#22` | Repeated Elements Count in Array | ⏳ In Progress | [View Code](./%2322%20Repeated%20Elements%20Count) |
+| `#23` | Fill Array with Random Numbers | ⏳ In Progress | [View Code](./%2323%20Fill%20Array%20with%20Random) |
+| `#24` | Max Number in Array | ⏳ In Progress | [View Code](./%2324%20Max%20Number%20in%20Array) |
+| `#25` | Min Number in Array | ⏳ In Progress | [View Code](./%2325%20Min%20Number%20in%20Array) |
+| `#26` | Sum of Random Array | ⏳ In Progress | [View Code](./%2326%20Sum%20of%20Random%20Array) |
+| `#27` | Average of Random Array | ⏳ In Progress | [View Code](./%2327%20Average%20of%20Random%20Array) |
+| `#28` | Copy Array | ⏳ In Progress | [View Code](./%2328%20Copy%20Array) |
+| `#29` | Copy Only Prime Numbers to Another Array | ⏳ In Progress | [View Code](./%2329%20Copy%20Only%20Prime%20Numbers) |
+| `#30` | Sum of 2 Arrays to a Third Array | ⏳ In Progress | [View Code](./%2330%20Sum%20of%202%20Arrays) |
 
 *Note: The status index upgrades dynamically as files migrate from local repositories onto this remote cloud terminal storage.*
 
