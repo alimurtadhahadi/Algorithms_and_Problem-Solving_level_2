@@ -1,0 +1,91 @@
+/*
+=================================== ⚙️ ﷽ ===================================
+  [PROBLEM] │ #22-Repeated Elements Count in Array
+  ----------|---------------------------------------------------------------
+  [CONTEXT] │ Course: ProgrammingAdvices (Algorithms Level 2)
+  ----------|---------------------------------------------------------------
+  [AUTHOR]  │ Ali_Dev (@Ali_DevCode_Lab)
+  ----------|---------------------------------------------------------------
+  [DATE]    │ June 24, 2026 (Wednesday)
+  ----------|---------------------------------------------------------------
+  [DESC]    │ Reads an array structure from the user, then deploys a linear
+  ----------| lookup search matrix to count specific element recurrences.
+  ----------|---------------------------------------------------------------
+  [URL]     │ TG: t.me/Ali_DevCode_Lab │ YT: youtube.com/Ali_Dev_Hub │ GH: github.com/alimurtadhahadi
+===========================================================================
+*/
+#include <iostream>
+#include <string>
+using namespace std;
+
+// Stream driver to read and validate a strict positive integer input
+int ReadPositiveNumber(string Message)
+{
+    int Number = 0;
+    do
+    {
+        cout << Message;
+        cin >> Number;
+    } while (Number <= 0);
+
+    return Number;
+}
+// Drives input stream vectors to populate array elements securely
+void ReadArray(int Arr[100], int& ArrLength)
+{
+    // Secure bounds protection driven by our positive tracking handler
+    ArrLength = ReadPositiveNumber("Enter number of elements (1 to 100) : ");
+
+    cout << "\nEnter array elements: \n";
+    for (int i = 0; i < ArrLength; i++)
+    {
+        cout << "Element [" << i + 1 << "] : ";
+        cin >> Arr[i];
+    }
+    cout << endl;
+}
+// Safe read-only print matrix passing array dimensions by value
+void PrintArray(int Arr[100], int ArrLength)
+{
+    for (int i = 0; i < ArrLength; i++)
+    {
+        cout << Arr[i] << " ";
+    }
+    cout << endl;
+}
+// Employs a single-pass linear traversal to count target occurrences
+int TimesRepeated(int Number, int Arr[100], int ArrLength)
+{
+    int count = 0;
+
+    for (int i = 0; i < ArrLength; i++)
+    {
+        if (Number == Arr[i])
+        {
+            count++;
+        }
+    }
+
+    return count;
+}
+int main()
+{
+    int NumberToCheck;
+    int Arr[100];
+    int ArrLength;
+
+    // Fire dynamic spatial data population pipelines
+    ReadArray(Arr, ArrLength);
+
+    NumberToCheck = ReadPositiveNumber("Please enter the number you want to check : ");
+
+    // Render final telemetry metrics onto the console screen
+    cout << "\nOriginal array : ";
+    PrintArray(Arr, ArrLength);
+
+    cout << "Number " << NumberToCheck;
+    cout << " is repeated ";
+    cout << TimesRepeated(NumberToCheck, Arr, ArrLength) << " time(s)\n";
+
+    return 0;
+}
