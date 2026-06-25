@@ -1,0 +1,92 @@
+/*
+=================================== ⚙️ ﷽ ===================================
+  [PROBLEM] │ #30-Sum of 2 Arrays to a Third Array
+  ----------|---------------------------------------------------------------
+  [CONTEXT] │ Course: ProgrammingAdvices (Algorithms Level 2)
+  ----------|---------------------------------------------------------------
+  [AUTHOR]  │ Ali_Dev (@Ali_DevCode_Lab)
+  ----------|---------------------------------------------------------------
+  [DATE]    │ June 25, 2026 (Thursday)
+  ----------|---------------------------------------------------------------
+  [DESC]    │ Fills twin random arrays using optimized loop fusion, then fires
+  ----------| a synchronized single-pass pipeline to compute element-wise totals.
+  ----------|---------------------------------------------------------------
+  [URL]     │ TG: t.me/Ali_DevCode_Lab │ YT: youtube.com/Ali_Dev_Hub │ GH: github.com/alimurtadhahadi
+===========================================================================
+*/
+
+#include <iostream>
+#include <cstdlib>
+#include <ctime>
+#include <string>
+
+using namespace std;
+
+int RandomNumber(int From, int To)
+{
+    return rand() % (To - From + 1) + From;
+}
+
+int ReadArrayLength(string Message, int MaxSize)
+{
+    int Number = 0;
+
+    do
+    {
+        cout << Message;
+        cin >> Number;
+    } while (Number <= 0 || Number > MaxSize);
+
+    return Number;
+}
+
+void FillArrayWithRandomNumbers(int Arr[100], int Arr2[100], int& ArrLength)
+{
+    ArrLength = ReadArrayLength("Enter number of elements (1 to 100): ", 100);
+
+    for (int i = 0; i < ArrLength; i++)
+    {
+        Arr[i] = RandomNumber(1, 100);
+        Arr2[i] = RandomNumber(1, 100);
+    }
+}
+
+void SumOf2Arrays(int Arr[100], int Arr2[100], int ArrSum[100], int ArrLength)
+{
+    for (int i = 0; i < ArrLength; i++)
+    {
+        ArrSum[i] = Arr[i] + Arr2[i];
+    }
+}
+
+void PrintArray(int Arr[100], int ArrLength)
+{
+    for (int i = 0; i < ArrLength; i++)
+    {
+        cout << Arr[i] << " ";
+    }
+    cout << endl;
+}
+
+int main()
+{
+    srand((unsigned)time(NULL));
+
+    int Arr[100], Arr2[100], ArrSum[100];
+    int ArrLength;
+
+    FillArrayWithRandomNumbers(Arr, Arr2, ArrLength);
+
+    SumOf2Arrays(Arr, Arr2, ArrSum, ArrLength);
+
+    cout << "\nArray Elements: ";
+    PrintArray(Arr, ArrLength);
+
+    cout << "\nArray 2 elements: ";
+    PrintArray(Arr2, ArrLength);
+
+    cout << "\nSum of array1 and array2 elements: ";
+    PrintArray(ArrSum, ArrLength);
+
+    return 0;
+}
