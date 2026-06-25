@@ -1,0 +1,125 @@
+/*
+=================================== ⚙️ ﷽ ===================================
+  [PROBLEM] │ #29-Copy Only Prime Numbers to Another Array
+  ----------|---------------------------------------------------------------
+  [CONTEXT] │ Course: ProgrammingAdvices (Algorithms Level 2)
+  ----------|---------------------------------------------------------------
+  [AUTHOR]  │ Ali_Dev (@Ali_DevCode_Lab)
+  ----------|---------------------------------------------------------------
+  [DATE]    │ June 25, 2026 (Thursday)
+  ----------|---------------------------------------------------------------
+  [DESC]    │ Generates a secure random matrix, then extracts and copies only
+  ----------| prime numbers into a second dynamic array using index tracking.
+  ----------|---------------------------------------------------------------
+  [URL]     │ TG: t.me/Ali_DevCode_Lab │ YT: youtube.com/Ali_Dev_Hub │ GH: github.com/alimurtadhahadi
+===========================================================================
+*/
+
+#include <iostream>
+#include <cstdlib>
+#include <ctime>
+#include <string>
+
+using namespace std;
+
+enum enNumberType
+{
+    Prime = 1,
+    NotPrime = 2
+};
+
+enNumberType CheckNumber(int number)
+{
+    if (number < 2)
+    {
+        return enNumberType::NotPrime;
+    }
+
+    int middle = number / 2;
+
+    for (int counter = 2; counter <= middle; counter++)
+    {
+        if (number % counter == 0)
+        {
+            return enNumberType::NotPrime;
+        }
+    }
+
+    return enNumberType::Prime;
+}
+
+int RandomNumber(int From, int To)
+{
+    return rand() % (To - From + 1) + From;
+}
+
+int ReadArrayLength(string Message, int MaxSize)
+{
+    int Number = 0;
+
+    do
+    {
+        cout << Message;
+        cin >> Number;
+    } while (Number <= 0 || Number > MaxSize);
+
+    return Number;
+}
+
+void FillArrayWithRandomNumbers(int Arr[100], int& ArrLength)
+{
+    ArrLength = ReadArrayLength("Enter number of elements (1 to 100): ", 100);
+
+    for (int i = 0; i < ArrLength; i++)
+    {
+        Arr[i] = RandomNumber(1, 100);
+    }
+}
+
+void PrintArray(int Arr[100], int ArrLength)
+{
+    for (int i = 0; i < ArrLength; i++)
+    {
+        cout << Arr[i] << " ";
+    }
+    cout << endl;
+}
+
+void CopyOnlyPrimaryNumbers(int ArrSource[100], int ArrDestination[100], int ArrLength, int& Arr2Length)
+{
+    int Counter = 0;
+
+    for (int i = 0; i < ArrLength; i++)
+    {
+        if (CheckNumber(ArrSource[i]) == enNumberType::Prime)
+        {
+            ArrDestination[Counter] = ArrSource[i];
+            Counter++;
+        }
+    }
+
+    Arr2Length = Counter;
+}
+
+int main()
+{
+    srand((unsigned)time(NULL));
+
+    int Arr[100];
+    int ArrLength;
+
+    FillArrayWithRandomNumbers(Arr, ArrLength);
+
+    int Arr2[100];
+    int Arr2Length = 0;
+
+    CopyOnlyPrimaryNumbers(Arr, Arr2, ArrLength, Arr2Length);
+
+    cout << "\nArray Elements: ";
+    PrintArray(Arr, ArrLength);
+
+    cout << "\nPrime Numbers in Array2: ";
+    PrintArray(Arr2, Arr2Length);
+
+    return 0;
+}
