@@ -51,7 +51,7 @@ This table systematically tracks my roadmap execution from Problem #01 to #50. E
 | `#25` | Min Number in Array | 🟢 Completed | [View Code](./%2325%20Min%20Number%20in%20Array) |
 | `#26` | Sum of Random Array | 🟢 Completed | [View Code](./%2326%20Sum%20of%20Random%20Array) |
 | `#27` | Average of Random Array | 🟢 Completed | [View Code](./%2327%20Average%20of%20Random%20Array) |
-| `#28` | Copy Array | ⏳ In Progress | [View Code](./%2328%20Copy%20Array) |
+| `#28` | Copy Array | 🟢 Completed | [View Code](./%2328%20Copy%20Array) |
 | `#29` | Copy Only Prime Numbers to Another Array | ⏳ In Progress | [View Code](./%2329%20Copy%20Only%20Prime%20Numbers) |
 | `#30` | Sum of 2 Arrays to a Third Array | ⏳ In Progress | [View Code](./%2330%20Sum%20of%202%20Arrays) |
 
