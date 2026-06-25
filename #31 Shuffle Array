@@ -1,0 +1,88 @@
+/*
+=================================== ⚙️ ﷽ ===================================
+  [PROBLEM] │ #31-Shuffle Array
+  ----------|---------------------------------------------------------------
+  [CONTEXT] │ Course: ProgrammingAdvices (Algorithms Level 2)
+  ----------|---------------------------------------------------------------
+  [AUTHOR]  │ Ali_Dev (@Ali_DevCode_Lab)
+  ----------|---------------------------------------------------------------
+  [DATE]    │ June 26, 2026 (Friday)
+  ----------|---------------------------------------------------------------
+  [DESC]    │ Fills an array from 1 to N, then executes an independent twin-index
+  ----------| stochastic randomization sequence to completely shuffle elements.
+  ----------|---------------------------------------------------------------
+  [URL]     │ TG: t.me/Ali_DevCode_Lab │ YT: youtube.com/Ali_Dev_Hub │ GH: github.com/alimurtadhahadi
+===========================================================================
+*/
+#include <iostream>
+#include <cstdlib>
+#include <ctime>
+#include <string>
+using namespace std;
+
+int RandomNumber(int From, int To)
+{
+    return rand() % (To - From + 1) + From;
+}
+int ReadArrayLength(string Message, int MaxSize)
+{
+    int Number = 0;
+
+    do
+    {
+        cout << Message;
+        cin >> Number;
+    } while (Number <= 0 || Number > MaxSize);
+
+    return Number;
+}
+void Swap(int& A, int& B)
+{
+    int temp = A;
+    A = B;
+    B = temp;
+}
+void FillArrayWith1toN(int Arr[100], int ArrLength)
+{
+    for (int i = 0; i < ArrLength; i++)
+    {
+        Arr[i] = i + 1;
+    }
+}
+void ShuffleArray(int Arr[100], int ArrLength)
+{
+    for (int i = 0; i < ArrLength; i++)
+    {
+        int index1 = RandomNumber(1, ArrLength) - 1;
+        int index2 = RandomNumber(1, ArrLength) - 1;
+
+        Swap(Arr[index1], Arr[index2]);
+    }
+}
+void PrintArray(int Arr[100], int ArrLength)
+{
+    for (int i = 0; i < ArrLength; i++)
+    {
+        cout << Arr[i] << " ";
+    }
+    cout << endl;
+}
+int main()
+{
+    srand((unsigned)time(NULL));
+
+    int Arr[100];
+    int ArrLength = ReadArrayLength("Please enter number of elements : ", 100);
+
+    FillArrayWith1toN(Arr, ArrLength);
+
+    cout << "\nArray elements before shuffle: ";
+    PrintArray(Arr, ArrLength);
+
+    ShuffleArray(Arr, ArrLength);
+
+    cout << "\nArray elements After shuffle : ";
+    PrintArray(Arr, ArrLength);
+
+    return 0;
+}
