@@ -55,7 +55,7 @@ This table systematically tracks my roadmap execution from Problem #01 to #50. E
 | `#29` | Copy Only Prime Numbers to Another Array | 🟢 Completed | [View Code](./%2329%20Copy%20Only%20Prime%20Numbers%20to%20Another%20Array) |
 | `#30` | Sum of 2 Arrays to a Third Array | 🟢 Completed | [View Code](./%2330%20Sum%20of%202%20Arrays%20to%20a%20Third%20Array) |
 | `#31` | Shuffle Array | 🟢 Completed | [View Code](./%2331%20Shuffle%20Array) |
-| `#32` | Copy Array in Reverse Order | ⏳ In Progress | [View Code](./%2332%20Copy%20Array%20in%20Reverse) |
+| `#32` | Copy Array in Reverse Order | 🟢 Completed | [View Code](./%2332%20Copy%20Array%20in%20Reverse%20Order) |
 | `#33` | Fill Array with Keys | ⏳ In Progress | [View Code](./%2333%20Fill%20Array%20with%20Keys) |
 | `#34` | Search for a Number in Array (Return Index) | ⏳ In Progress | [View Code](./%2334%20Search%20for%20a%20Number) |
 | `#35` | Check if Number Exists in Array (Boolean) | ⏳ In Progress | [View Code](./%2335%20Check%20if%20Number%20Exists) |
