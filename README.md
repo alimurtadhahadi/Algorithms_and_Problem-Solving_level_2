@@ -63,7 +63,7 @@ This table systematically tracks my roadmap execution from Problem #01 to #50. E
 | `#37` | Copy Array Semi-Dynamically     | 🟢 Completed | [View Code](./%2337%20Copy%20Array%20Semi-Dynamically%20(Using%20AddArrayElement)) |
 | `#38` | Copy Odd Numbers to New Array   | 🟢 Completed | [View Code](./%2338%20Copy%20Odd%20Numbers%20to%20New%20Array%20(Using%20AddArrayElement)) |
 | `#39` | Copy Prime Numbers to New Array  | 🟢 Completed | [View Code](./%2339%20Copy%20Prime%20Numbers%20to%20New%20Array%20(Using%20AddArrayElement)) |
-| `#40` | Copy Distinct Numbers to New Array| ⏳ In Progress | [View Code](./%2340%20Copy%20Distinct%20Numbers) |
+| `#40` | Copy Distinct Numbers to New Array| 🟢 Completed | [View Code](./%2340%20Copy%20Distinct%20Numbers%20to%20New%20Array) |
 
 *Note: The status index upgrades dynamically as files migrate from local repositories onto this remote cloud terminal storage.*
 
