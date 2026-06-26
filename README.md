@@ -23,7 +23,7 @@ Welcome to my official core repository for **Algorithms & Problem Solving Level 
 This table systematically tracks my roadmap execution from Problem #01 to #50. Each solution is engineered with pure logic, zero bloat, and defensive data validation.
 
 | Problem ID | Problem Title | Implementation Status | Source Code Link |
-| :---: | :--- | :---: | :---: |
+| :---: | :---- | :---: | :---: |
 | `#01` | Multiplication Table From 1 to 10 | 🟢 Completed | [View Code](./%2301%20Multiplication%20Table%20From%201%20to%2010) |
 | `#02` | Prime Numbers From 1 to N | 🟢 Completed | [Veiw Code](./%232%20Prime%20Numbers%20Range%20Finder) |
 | `#03` | Perfect Number Check | 🟢 Completed | [Veiw Code](./%2303%20Perfect%20Number%20Checker) |
@@ -59,7 +59,7 @@ This table systematically tracks my roadmap execution from Problem #01 to #50. E
 | `#33` | Fill Array with Keys | 🟢 Completed | [View Code](./%2333%20Fill%20Array%20with%20Keys) |
 | `#34` | Search for a Number in Array (Return Index) | 🟢 Completed | [View Code](./%2334%20Search%20for%20a%20Number%20in%20Array%20(Return%20Index)) |
 | `#35` | Check if Number Exists in Array (Boolean Wrapper) | 🟢 Completed | [View Code](./%2335%20Check%20if%20Number%20Exists%20in%20Array%20(Boolean%20Wrapper)) |
-| `#36` | Add Number to Array Dynamically | ⏳ In Progress | [View Code](./%2336%20Add%20Number%20Dynamically) |
+| `#36` | Add Number to Array Dynamically | 🟢 Completed | [View Code](./%2336%20Add%20Number%20to%20Array%20Dynamically) |
 | `#37` | Copy Array Semi-Dynamically     | ⏳ In Progress | [View Code](./%2337%20Copy%20Array%20Semi-Dynamically) |
 | `#38` | Copy Odd Numbers to New Array   | ⏳ In Progress | [View Code](./%2338%20Copy%20Odd%20Numbers) |
 | `#39` | Copy Prime Numbers to New Array  | ⏳ In Progress | [View Code](./%2339%20Copy%20Prime%20Numbers) |
