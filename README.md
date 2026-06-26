@@ -58,7 +58,7 @@ This table systematically tracks my roadmap execution from Problem #01 to #50. E
 | `#32` | Copy Array in Reverse Order | 🟢 Completed | [View Code](./%2332%20Copy%20Array%20in%20Reverse%20Order) |
 | `#33` | Fill Array with Keys | 🟢 Completed | [View Code](./%2333%20Fill%20Array%20with%20Keys) |
 | `#34` | Search for a Number in Array (Return Index) | 🟢 Completed | [View Code](./%2334%20Search%20for%20a%20Number%20in%20Array%20(Return%20Index)) |
-| `#35` | Check if Number Exists in Array (Boolean) | ⏳ In Progress | [View Code](./%2335%20Check%20if%20Number%20Exists) |
+| `#35` | Check if Number Exists in Array (Boolean Wrapper) | 🟢 Completed | [View Code](./%2335%20Check%20if%20Number%20Exists%20in%20Array%20(Boolean%20Wrapper)) |
 
 *Note: The status index upgrades dynamically as files migrate from local repositories onto this remote cloud terminal storage.*
 
