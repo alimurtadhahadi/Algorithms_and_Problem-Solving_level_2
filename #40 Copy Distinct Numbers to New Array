@@ -1,0 +1,100 @@
+/*
+=================================== ⚙️ ﷽ ===================================
+  [PROBLEM] │ #40-Copy Distinct Numbers to New Array
+  ----------|---------------------------------------------------------------
+  [CONTEXT] │ Course: ProgrammingAdvices (Algorithms Level 2)
+  ----------|---------------------------------------------------------------
+  [AUTHOR]  │ Ali_Dev (@Ali_DevCode_Lab)
+  ----------|---------------------------------------------------------------
+  [DATE]    │ June 27, 2026 (Saturday)
+  ----------|---------------------------------------------------------------
+  [DESC]    │ Parses a source array with dense duplicate entries, then applies
+  ----------| an identity filtering sequence to copy exclusively unique distinct elements.
+  ----------|---------------------------------------------------------------
+  [URL]     │ TG: t.me/Ali_DevCode_Lab │ YT: youtube.com/Ali_Dev_Hub │ GH: github.com/alimurtadhahadi
+===========================================================================
+*/
+#include <iostream>
+#include <string>
+using namespace std;
+
+void FillArray(int Arr[100], int& ArrLength)
+{
+    ArrLength = 10;
+
+    Arr[0] = 10;
+    Arr[1] = 10;
+    Arr[2] = 10;
+    Arr[3] = 50;
+    Arr[4] = 50;
+    Arr[5] = 70;
+    Arr[6] = 70;
+    Arr[7] = 70;
+    Arr[8] = 70;
+    Arr[9] = 90;
+}
+
+void AddArrayElement(int Number, int Arr[100], int& ArrLength)
+{
+    ArrLength++;
+    Arr[ArrLength - 1] = Number;
+}
+
+void PrintArray(int Arr[100], int ArrLength)
+{
+    for (int i = 0; i < ArrLength; i++)
+    {
+        cout << Arr[i] << " ";
+    }
+    cout << endl;
+}
+
+short FindNumberPositionInArray(int Number, int Arr[100], int ArrLength)
+{
+    for (int i = 0; i < ArrLength; i++)
+    {
+        if (Arr[i] == Number)
+        {
+            return i;
+        }
+    }
+
+    return -1;
+}
+
+bool IsNumberInArray(int Number, int Arr[100], int ArrLength)
+{
+    return FindNumberPositionInArray(Number, Arr, ArrLength) != -1;
+}
+
+void CopyDistinctNumbersToArray(int ArrSource[100], int ArrDestination[100], int SourceLength, int& DestinationLength)
+{
+    for (int i = 0; i < SourceLength; i++)
+    {
+        if (!(IsNumberInArray(ArrSource[i], ArrDestination, DestinationLength)))
+        {
+            AddArrayElement(ArrSource[i], ArrDestination, DestinationLength);
+        }
+    }
+}
+
+int main()
+{
+    int ArrSource[100];
+    int SourceLength = 0;
+
+    FillArray(ArrSource, SourceLength);
+
+    int ArrDestination[100];
+    int DestinationLength = 0;
+
+    CopyDistinctNumbersToArray(ArrSource, ArrDestination, SourceLength, DestinationLength);
+
+    cout << "\nOriginal Array elements (With Duplicates):\n";
+    PrintArray(ArrSource, SourceLength);
+
+    cout << "\nDistinct Array elements (After Filtering):\n";
+    PrintArray(ArrDestination, DestinationLength);
+
+    return 0;
+}
