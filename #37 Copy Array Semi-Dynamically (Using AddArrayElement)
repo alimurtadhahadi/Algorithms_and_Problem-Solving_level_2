@@ -1,0 +1,95 @@
+/*
+=================================== ⚙️ ﷽ ===================================
+  [PROBLEM] │ #37-Copy Array Semi-Dynamically (Using AddArrayElement)
+  ----------|---------------------------------------------------------------
+  [CONTEXT] │ Course: ProgrammingAdvices (Algorithms Level 2)
+  ----------|---------------------------------------------------------------
+  [AUTHOR]  │ Ali_Dev (@Ali_DevCode_Lab)
+  ----------|---------------------------------------------------------------
+  [DATE]    │ June 26, 2026 (Friday)
+  ----------|---------------------------------------------------------------
+  [DESC]    │ Generates a random array, then structures a secondary matrix
+  ----------| element-by-element by driving the dynamic append pipeline.
+  ----------|---------------------------------------------------------------
+  [URL]     │ TG: t.me/Ali_DevCode_Lab │ YT: youtube.com/Ali_Dev_Hub │ GH: github.com/alimurtadhahadi
+===========================================================================
+*/
+#include <iostream>
+#include <cstdlib>
+#include <ctime>
+#include <string>
+using namespace std;
+
+int RandomNumber(int From, int To)
+{
+    int randNum = rand() % (To - From + 1) + From;
+    return randNum;
+}
+
+int ReadArrayLength(string Message, int MaxSize)
+{
+    int Number = 0;
+
+    do
+    {
+        cout << Message;
+        cin >> Number;
+    } while (Number <= 0 || Number > MaxSize);
+
+    return Number;
+}
+
+void AddArrayElement(int Number, int Arr[100], int& ArrLength)
+{
+    ArrLength++;
+    Arr[ArrLength - 1] = Number;
+}
+
+void PrintArray(int Arr[100], int ArrLength)
+{
+    for (int i = 0; i < ArrLength; i++)
+    {
+        cout << Arr[i] << " ";
+    }
+    cout << endl;
+}
+
+void FillArrayWithRandomNumbers(int Arr[100], int& ArrLength)
+{
+    ArrLength = ReadArrayLength("Enter number of elements (1 to 100): ", 100);
+
+    for (int i = 0; i < ArrLength; i++)
+    {
+        Arr[i] = RandomNumber(1, 100);
+    }
+}
+
+void CopyArrayUsingAddArrayElement(int ArrSource[100], int ArrDestination[100], int ArrLength, int& ArrDestinationLength)
+{
+    for (int i = 0; i < ArrLength; i++)
+    {
+        AddArrayElement(ArrSource[i], ArrDestination, ArrDestinationLength);
+    }
+}
+
+int main()
+{
+    srand((unsigned)time(NULL));
+
+    int Arr1[100];
+    int ArrLength1 = 0;
+    FillArrayWithRandomNumbers(Arr1, ArrLength1);
+
+    int Arr2[100];
+    int Arr2Length = 0;
+
+    CopyArrayUsingAddArrayElement(Arr1, Arr2, ArrLength1, Arr2Length);
+
+    cout << "\nArray 1 elements:\n";
+    PrintArray(Arr1, ArrLength1);
+
+    cout << "\nArray 2 elements after copy:\n";
+    PrintArray(Arr2, Arr2Length);
+
+    return 0;
+}
