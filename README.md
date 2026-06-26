@@ -60,7 +60,7 @@ This table systematically tracks my roadmap execution from Problem #01 to #50. E
 | `#34` | Search for a Number in Array (Return Index) | 🟢 Completed | [View Code](./%2334%20Search%20for%20a%20Number%20in%20Array%20(Return%20Index)) |
 | `#35` | Check if Number Exists in Array (Boolean Wrapper) | 🟢 Completed | [View Code](./%2335%20Check%20if%20Number%20Exists%20in%20Array%20(Boolean%20Wrapper)) |
 | `#36` | Add Number to Array Dynamically | 🟢 Completed | [View Code](./%2336%20Add%20Number%20to%20Array%20Dynamically) |
-| `#37` | Copy Array Semi-Dynamically     | 🟢 Completed | [View Code](./%%2336%20Add%20Number%20to%20Array%20Dynamically) |
+| `#37` | Copy Array Semi-Dynamically     | 🟢 Completed | [View Code](./%2337%20Copy%20Array%20Semi-Dynamically%20(Using%20AddArrayElement)) |
 | `#38` | Copy Odd Numbers to New Array   | ⏳ In Progress | [View Code](./%2338%20Copy%20Odd%20Numbers) |
 | `#39` | Copy Prime Numbers to New Array  | ⏳ In Progress | [View Code](./%2339%20Copy%20Prime%20Numbers) |
 | `#40` | Copy Distinct Numbers to New Array| ⏳ In Progress | [View Code](./%2340%20Copy%20Distinct%20Numbers) |
