@@ -1,0 +1,115 @@
+/*
+=================================== ⚙️ ﷽ ===================================
+  [PROBLEM] │ #35-Check if Number Exists in Array (Boolean Wrapper)
+  ----------|---------------------------------------------------------------
+  [CONTEXT] │ Course: ProgrammingAdvices (Algorithms Level 2)
+  ----------|---------------------------------------------------------------
+  [AUTHOR]  │ Ali_Dev (@Ali_DevCode_Lab)
+  ----------|---------------------------------------------------------------
+  [DATE]    │ June 26, 2026 (Friday)
+  ----------|---------------------------------------------------------------
+  [DESC]    │ Generates a secure random matrix, then deploys an optimized boolean
+  ----------| wrapper around the linear search tracker to verify element existence.
+  ----------|---------------------------------------------------------------
+  [URL]     │ TG: t.me/Ali_DevCode_Lab │ YT: youtube.com/Ali_Dev_Hub │ GH: github.com/alimurtadhahadi
+===========================================================================
+*/
+
+#include <iostream>
+#include <cstdlib>
+#include <ctime>
+#include <string>
+
+using namespace std;
+
+int RandomNumber(int From, int To)
+{
+    return rand() % (To - From + 1) + From;
+}
+
+int ReadArrayLength(string Message, int MaxSize)
+{
+    int Number = 0;
+
+    do
+    {
+        cout << Message;
+        cin >> Number;
+    } while (Number <= 0 || Number > MaxSize);
+
+    return Number;
+}
+
+void FillArrayWithRandomNumbers(int Arr[100], int& ArrLength)
+{
+    ArrLength = ReadArrayLength("Enter number of elements (1 to 100): ", 100);
+
+    for (int i = 0; i < ArrLength; i++)
+    {
+        Arr[i] = RandomNumber(1, 100);
+    }
+}
+
+void PrintArray(int Arr[100], int ArrLength)
+{
+    for (int i = 0; i < ArrLength; i++)
+    {
+        cout << Arr[i] << " ";
+    }
+    cout << endl;
+}
+
+short FindNumberPositionInArray(int Number, int Arr[100], int ArrLength)
+{
+    for (int i = 0; i < ArrLength; i++)
+    {
+        if (Number == Arr[i])
+        {
+            return i;
+        }
+    }
+
+    return -1;
+}
+
+int ReadNumber()
+{
+    int Number;
+
+    cout << "\nPlease enter a number to search for : ";
+    cin >> Number;
+
+    return Number;
+}
+
+bool IsNumberInArray(int Number, int Arr[100], int ArrLength)
+{
+    return FindNumberPositionInArray(Number, Arr, ArrLength) != -1;
+}
+
+int main()
+{
+    srand((unsigned)time(NULL));
+
+    int Arr[100];
+    int ArrLength;
+    int Number;
+
+    FillArrayWithRandomNumbers(Arr, ArrLength);
+
+    cout << "\nArray Elements: ";
+    PrintArray(Arr, ArrLength);
+
+    Number = ReadNumber();
+
+    if (!(IsNumberInArray(Number, Arr, ArrLength)))
+    {
+        cout << "No, The number is not found :-(\n";
+    }
+    else
+    {
+        cout << "Yes it is found :-)\n";
+    }
+
+    return 0;
+}
