@@ -72,7 +72,7 @@ This table systematically tracks my roadmap execution from Problem #01 to #50. E
 | `#46` | My ABS (Absolute Value) | 🟢 Completed | [View Code](./%2346%20My%20ABS%20(Absolute%20Value)) |
 | `#47` | My Round | 🟢 Completed | [View Code](./%2347%20My%20Round%20Function) |
 | `#48` | My Floor | 🟢 Completed | [View Code](./%2348%20My%20Floor%20Function) |
-| `#49` | My Ceil | 🔴 Pending | [View Code](./%2349%20My%20Ceil) |
+| `#49` | My Ceil | 🟢 Completed | [View Code](./%2349%20My%20Ceil%20Function) |
 | `#50` | My Square Root (SQRT) | 🏁 Final Boss | [View Code](./%2350%20My%20Square%20Root) |
 
 *Note: The status index upgrades dynamically as files migrate from local repositories onto this remote cloud terminal storage.*
