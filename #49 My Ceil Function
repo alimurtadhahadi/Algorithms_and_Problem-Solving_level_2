@@ -1,0 +1,70 @@
+/*
+=================================== ⚙️ ﷽ ===================================
+  [PROBLEM] │ #49-My Ceil Function
+  ----------|---------------------------------------------------------------
+  [CONTEXT] │ Course: ProgrammingAdvices (Algorithms Level 2)
+  ----------|---------------------------------------------------------------
+  [AUTHOR]  │ Ali_Dev (@Ali_DevCode_Lab)
+  ----------|---------------------------------------------------------------
+  [DATE]    │ June 28, 2026 (Sunday)
+  ----------|---------------------------------------------------------------
+  [DESC]    │ Simulates the native mathematical ceil sequence by tracking
+  ----------| absolute fractional boundaries and steering directional increments.
+  ----------|---------------------------------------------------------------
+  [URL]     │ TG: t.me/Ali_DevCode_Lab │ YT: youtube.com/Ali_Dev_Hub │ GH: github.com/alimurtadhahadi
+===========================================================================
+*/
+
+#include <iostream>
+#include <string>
+#include <cmath>
+
+using namespace std;
+
+float ReadNumber()
+{
+    float Number = 0;
+
+    cout << "please enter a Number : ";
+    cin >> Number;
+
+    return Number;
+}
+
+float GetFractionPart(float Number)
+{
+    return Number - int(Number);
+}
+
+int MyCeil(float Number)
+{
+    int IntPart = int(Number);
+    float FractionPart = GetFractionPart(Number);
+
+    if (abs(FractionPart) > 0)
+    {
+        if (Number > 0)
+        {
+            return IntPart + 1;
+        }
+        else
+        {
+            return IntPart;
+        }
+    }
+    else
+    {
+        return IntPart;
+    }
+}
+
+int main()
+{
+    float Number = ReadNumber();
+
+    cout << "\nMy ceil Result  : " << MyCeil(Number) << endl;
+
+    cout << "C++ ceil Result : " << ceil(Number) << endl;
+
+    return 0;
+}
