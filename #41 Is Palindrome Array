@@ -1,0 +1,90 @@
+/*
+=================================== ⚙️ ﷽ ===================================
+  [PROBLEM] │ #41-Is Palindrome Array
+  ----------|---------------------------------------------------------------
+  [CONTEXT] │ Course: ProgrammingAdvices (Algorithms Level 2)
+  ----------|---------------------------------------------------------------
+  [AUTHOR]  │ Ali_Dev (@Ali_DevCode_Lab)
+  ----------|---------------------------------------------------------------
+  [DATE]    │ June 27, 2026 (Saturday)
+  ----------|---------------------------------------------------------------
+  [DESC]    │ Reads an array from the user, then deploys an optimized symmetry-check
+  ----------| algorithm running at O(N/2) execution boundary loops to verify palindromes.
+  ----------|---------------------------------------------------------------
+  [URL]     │ TG: t.me/Ali_DevCode_Lab │ YT: youtube.com/Ali_Dev_Hub │ GH: github.com/alimurtadhahadi
+===========================================================================
+*/
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+int ReadArrayLength(string Message, int MaxSize)
+{
+    int Number = 0;
+
+    do
+    {
+        cout << Message;
+        cin >> Number;
+    } while (Number <= 0 || Number > MaxSize);
+
+    return Number;
+}
+
+void InputUserNumbersInArray(int Arr[100], int ArrLength)
+{
+    for (int i = 0; i < ArrLength; i++)
+    {
+        cout << "Please enter number " << i + 1 << " : ";
+        cin >> Arr[i];
+    }
+}
+
+void PrintArray(int Arr[100], int ArrLength)
+{
+    for (int i = 0; i < ArrLength; i++)
+    {
+        cout << Arr[i] << " ";
+    }
+    cout << endl;
+}
+
+bool IsPalindromeArray(int Arr[100], int ArrLength)
+{
+    int MidPoint = ArrLength / 2;
+
+    for (int i = 0; i < MidPoint; i++)
+    {
+        if (Arr[i] != Arr[ArrLength - 1 - i])
+        {
+            return false;
+        }
+    }
+
+    return true;
+}
+
+int main()
+{
+    int Arr[100];
+    int ArrLength = 0;
+
+    ArrLength = ReadArrayLength("Please enter Array length (1 to 100) : ", 100);
+
+    InputUserNumbersInArray(Arr, ArrLength);
+
+    cout << "\nArray Elements :\n";
+    PrintArray(Arr, ArrLength);
+
+    if (IsPalindromeArray(Arr, ArrLength))
+    {
+        cout << "\nYes, array is Palindrome :-)\n";
+    }
+    else
+    {
+        cout << "\nNo, array is NOT Palindrome :-(\n";
+    }
+
+    return 0;
+}
