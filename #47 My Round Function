@@ -1,0 +1,70 @@
+/*
+=================================== ⚙️ ﷽ ===================================
+  [PROBLEM] │ #47-My Round Function
+  ----------|---------------------------------------------------------------
+  [CONTEXT] │ Course: ProgrammingAdvices (Algorithms Level 2)
+  ----------|---------------------------------------------------------------
+  [AUTHOR]  │ Ali_Dev (@Ali_DevCode_Lab)
+  ----------|---------------------------------------------------------------
+  [DATE]    │ June 27, 2026 (Saturday)
+  ----------|---------------------------------------------------------------
+  [DESC]    │ Simulates the native mathematical round sequence by isolating
+  ----------| floating-point fractions and driving conditional increment bounds.
+  ----------|---------------------------------------------------------------
+  [URL]     │ TG: t.me/Ali_DevCode_Lab │ YT: youtube.com/Ali_Dev_Hub │ GH: github.com/alimurtadhahadi
+===========================================================================
+*/
+#include <iostream>
+#include <string>
+#include <cmath>
+
+using namespace std;
+
+float GetFractionPart(float Number)
+{
+    return Number - int(Number);
+}
+
+float ReadNumber()
+{
+    float num = 0;
+
+    cout << "please enter a Number : ";
+    cin >> num;
+
+    return num;
+}
+
+int MyRound(float Number)
+{
+    int intPart;
+    intPart = int(Number);
+
+    float FractionsPart = GetFractionPart(Number);
+
+    if (abs(FractionsPart) >= 0.5)
+    {
+        if (intPart >= 0)
+        {
+            return ++intPart;
+        }
+        else
+        {
+            return --intPart;
+        }
+    }
+    else
+    {
+        return intPart;
+    }
+}
+
+int main()
+{
+    float Number = ReadNumber();
+
+    cout << "\nMy Round Result  : " << MyRound(Number) << endl;
+    cout << "C++ Round Result : " << round(Number) << endl;
+
+    return 0;
+}
