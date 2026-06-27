@@ -64,6 +64,16 @@ This table systematically tracks my roadmap execution from Problem #01 to #50. E
 | `#38` | Copy Odd Numbers to New Array   | 🟢 Completed | [View Code](./%2338%20Copy%20Odd%20Numbers%20to%20New%20Array%20(Using%20AddArrayElement)) |
 | `#39` | Copy Prime Numbers to New Array  | 🟢 Completed | [View Code](./%2339%20Copy%20Prime%20Numbers%20to%20New%20Array%20(Using%20AddArrayElement)) |
 | `#40` | Copy Distinct Numbers to New Array| 🟢 Completed | [View Code](./%2340%20Copy%20Distinct%20Numbers%20to%20New%20Array) |
+| `#41` | Is Palindrome Array | 🟢 Completed | [View Code](./%2341%20Is%20Palindrome%20Array) |
+| `#42` | Count Odd Numbers in Array | ⏳ In Progress | [View Code](./%2342%20Count%20Odd%20Numbers%20in%20Array) |
+| `#43` | Count Even Numbers in Array | 🔴 Pending | [View Code](./%2343%20Count%20Even%20Numbers%20in%20Array) |
+| `#44` | Count Positive Numbers in Array | 🔴 Pending | [View Code](./%2344%20Count%20Positive%20Numbers%20in%20Array) |
+| `#45` | Count Negative Numbers in Array | 🔴 Pending | [View Code](./%2345%20Count%20Negative%20Numbers%20in%20Array) |
+| `#46` | My ABS (Absolute Value) | 🔴 Pending | [View Code](./%2346%20My%20ABS) |
+| `#47` | My Round | 🔴 Pending | [View Code](./%2347%20My%20Round) |
+| `#48` | My Floor | 🔴 Pending | [View Code](./%2348%20My%20Floor) |
+| `#49` | My Ceil | 🔴 Pending | [View Code](./%2349%20My%20Ceil) |
+| `#50` | My Square Root (SQRT) | 🏁 Final Boss | [View Code](./%2350%20My%20Square%20Root) |
 
 *Note: The status index upgrades dynamically as files migrate from local repositories onto this remote cloud terminal storage.*
 
