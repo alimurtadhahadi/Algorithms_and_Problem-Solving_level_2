@@ -1,0 +1,94 @@
+/*
+=================================== ⚙️ ﷽ ===================================
+  [PROBLEM] │ #43-Count Even Numbers in Array
+  ----------|---------------------------------------------------------------
+  [CONTEXT] │ Course: ProgrammingAdvices (Algorithms Level 2)
+  ----------|---------------------------------------------------------------
+  [AUTHOR]  │ Ali_Dev (@Ali_DevCode_Lab)
+  ----------|---------------------------------------------------------------
+  [DATE]    │ June 27, 2026 (Saturday)
+  ----------|---------------------------------------------------------------
+  [DESC]    │ Generates a random array and deploys a linear scanning sequence
+  ----------| using tight mathematical modulo invariants to extract even number counts.
+  ----------|---------------------------------------------------------------
+  [URL]     │ TG: t.me/Ali_DevCode_Lab │ YT: youtube.com/Ali_Dev_Hub │ GH: github.com/alimurtadhahadi
+===========================================================================
+*/
+
+#include <iostream>
+#include <cstdlib>
+#include <ctime>
+#include <string>
+
+using namespace std;
+
+int RandomNumber(int From, int To)
+{
+    int randNum = rand() % (To - From + 1) + From;
+    return randNum;
+}
+
+int ReadArrayLength(string Message, int MaxSize)
+{
+    int Number = 0;
+
+    do
+    {
+        cout << Message;
+        cin >> Number;
+    } while (Number <= 0 || Number > MaxSize);
+
+    return Number;
+}
+
+void PrintArray(int Arr[100], int ArrLength)
+{
+    for (int i = 0; i < ArrLength; i++)
+    {
+        cout << Arr[i] << " ";
+    }
+    cout << endl;
+}
+
+void FillArrayWithRandomNumbers(int Arr[100], int& ArrLength)
+{
+    ArrLength = ReadArrayLength("Enter number of elements (1 to 100): ", 100);
+
+    for (int i = 0; i < ArrLength; i++)
+    {
+        Arr[i] = RandomNumber(1, 100);
+    }
+}
+
+int EvenCount(int Arr[100], int ArrLength)
+{
+    int Counter = 0;
+
+    for (int i = 0; i < ArrLength; i++)
+    {
+        if (Arr[i] % 2 == 0)
+        {
+            Counter++;
+        }
+    }
+
+    return Counter;
+}
+
+int main()
+{
+    srand((unsigned)time(NULL));
+
+    int Arr[100];
+    int ArrLength = 0;
+
+    FillArrayWithRandomNumbers(Arr, ArrLength);
+
+    cout << "\nArray 1 elements:\n";
+    PrintArray(Arr, ArrLength);
+
+    cout << "\nEven Numbers count is: ";
+    cout << EvenCount(Arr, ArrLength) << endl;
+
+    return 0;
+}
