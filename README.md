@@ -69,7 +69,7 @@ This table systematically tracks my roadmap execution from Problem #01 to #50. E
 | `#43` | Count Even Numbers in Array | 🟢 Completed | [View Code](./%2343%20Count%20Even%20Numbers%20in%20Array) |
 | `#44` | Count Positive Numbers in Array | 🟢 Completed | [View Code](./%2344%20Count%20Positive%20Numbers%20in%20Array) |
 | `#45` | Count Negative Numbers in Array | 🟢 Completed | [View Code](./%2345%20Count%20Negative%20Numbers%20in%20Array) |
-| `#46` | My ABS (Absolute Value) | 🔴 Pending | [View Code](./%2346%20My%20ABS) |
+| `#46` | My ABS (Absolute Value) | 🟢 Completed | [View Code](./%2346%20My%20ABS%20(Absolute%20Value)) |
 | `#47` | My Round | 🔴 Pending | [View Code](./%2347%20My%20Round) |
 | `#48` | My Floor | 🔴 Pending | [View Code](./%2348%20My%20Floor) |
 | `#49` | My Ceil | 🔴 Pending | [View Code](./%2349%20My%20Ceil) |
