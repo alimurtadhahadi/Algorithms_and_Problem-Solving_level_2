@@ -1,0 +1,450 @@
+/*
+=================================== ⚙️ ﷽ ===================================
+  [PROJECT]  │ #52-Math Quiz Game Engine (Ultimate Monolithic Version)
+  -----------|---------------------------------------------------------------
+  [CONTEXT]  │ Course: ProgrammingAdvices (Algorithms & Problem Solving Level 2)
+  -----------|---------------------------------------------------------------
+  [AUTHOR]   │ Ali_Dev (@Ali_DevCode_Lab)
+  -----------|---------------------------------------------------------------
+  [DATE]     │ June 30, 2026 (Tuesday)
+  -----------|---------------------------------------------------------------
+  [STATUS]   │ Fully Debugged, Refactored, and Verified for Visual Studio 2022.
+===========================================================================
+*/
+
+#include <iostream>
+#include <string>
+#include <cstdlib>
+#include <ctime>
+#include <windows.h>
+#include <cmath>
+
+using namespace std;
+
+// ==========================================
+// 🎯 GLOBAL ENUMS & STRUCTURES DATA SEGMENT
+// ==========================================
+
+enum enQuestionsLevel { Easy = 1, Normal = 2, Hard = 3, Expert = 4, Master = 5, MixLevel = 6 };
+enum enOperationType { Add = 1, Sub = 2, Mul = 3, Div = 4, MixOp = 5, Pow = 6, Sqrt = 7 };
+
+struct stQuestion
+{
+    int Number1;
+    int Number2;
+    enOperationType OperationType;
+    enQuestionsLevel QuestionLevel;
+    int CorrectAnswer;
+    int PlayerAnswer;
+    bool IsCorrect;
+};
+
+struct stQuizz
+{
+    stQuestion QuestionList[100];
+    short NumberOfQuestions;
+    enQuestionsLevel QuestionsLevel;
+    enOperationType OpType;
+    short RightAnswersCount = 0;
+    short WrongAnswersCount = 0;
+    bool IsPass;
+};
+
+// ==========================================
+// 🎲 CORE UTILITY & INPUT PROCESSING MODULES
+// ==========================================
+
+int RandomNumber(int From, int To)
+{
+    int randNum = rand() % (To - From + 1) + From;
+    return randNum;
+}
+
+short ReadHowManyQuestions()
+{
+    short NumberOfQuestions;
+    do {
+        cout << "Please enter Number of Questions do you want : ";
+        cin >> NumberOfQuestions;
+    } while (NumberOfQuestions < 1);
+    return NumberOfQuestions;
+}
+
+enQuestionsLevel ReadQuestionsLevel()
+{
+    short LevelNumber;
+    short Continue;
+
+    cout << "[1]Easy, [2]Normal, [3]Hard, [4]Expert, [5]Master, [6]mix(without Master Level) " << endl;
+
+    do {
+        cout << "please enter number from above numbers : ";
+        cin >> LevelNumber;
+
+        if (LevelNumber == 5) {
+            cout << "\nThis level generated questions involving addition, subtraction, multiplication, division, exponents and square roots." << endl;
+            cout << "and numbers coded similarly to those in the expert level." << endl;
+            cout << "if want to continue (type 1 or 0 to return to menu) : ";
+            cin >> Continue;
+
+            if (Continue == 1) {
+                return enQuestionsLevel::Master;
+            }
+            else {
+                LevelNumber = 7; 
+            }
+        }
+    } while (LevelNumber < 1 || LevelNumber > 6);
+
+    switch (LevelNumber) {
+    case 1:  return enQuestionsLevel::Easy;
+    case 2:  return enQuestionsLevel::Normal;
+    case 3:  return enQuestionsLevel::Hard;
+    case 4:  return enQuestionsLevel::Expert;
+    case 6:  return enQuestionsLevel::MixLevel;
+    default: return enQuestionsLevel::Easy;
+    }
+}
+
+enOperationType ReadOpType()
+{
+    short OpTypeNumber;
+    cout << "[1]addition, [2]subtraction, [3]multiplication, [4]division, [5]Mix" << endl;
+
+    do {
+        cout << "Please enter Number from above Numbers : ";
+        cin >> OpTypeNumber;
+    } while (OpTypeNumber < 1 || OpTypeNumber > 5);
+
+    switch (OpTypeNumber) {
+    case 1:  return enOperationType::Add;
+    case 2:  return enOperationType::Sub;
+    case 3:  return enOperationType::Mul;
+    case 4:  return enOperationType::Div;
+    case 5:  return enOperationType::MixOp;
+    default: return enOperationType::Add;
+    }
+}
+
+// ==========================================
+// 🔤 TOKEN STRINGIFICATION STRING TRANSLATORS
+// ==========================================
+
+string GetOpTypeSymbol(enOperationType OpType)
+{
+    switch (OpType) {
+    case enOperationType::Add:   return "+";
+    case enOperationType::Sub:   return "-";
+    case enOperationType::Mul:   return "*";
+    case enOperationType::Div:   return "/";
+    case enOperationType::MixOp: return "Mix";
+    case enOperationType::Pow:   return "^";
+    case enOperationType::Sqrt:  return "v";
+    default:                     return "+";
+    }
+}
+
+string GetQuizLevelName(enQuestionsLevel Level)
+{
+    switch (Level) {
+    case enQuestionsLevel::Easy:      return "Easy";
+    case enQuestionsLevel::Normal:    return "Normal";
+    case enQuestionsLevel::Hard:      return "Hard";
+    case enQuestionsLevel::Expert:    return "Expert";
+    case enQuestionsLevel::Master:    return "Master";
+    case enQuestionsLevel::MixLevel:  return "MixLevel";
+    default:                          return "Easy";
+    }
+}
+
+// ==========================================
+// 🧮 MATH ENGINE & ARITHMETIC CORE MODULES
+// ==========================================
+
+int SimpleCalculator(int Number1, int Number2, enOperationType OpType)
+{
+    switch (OpType)
+    {
+    case enOperationType::Add:
+        return Number1 + Number2;
+
+    case enOperationType::Sub:
+        return Number1 - Number2;
+
+    case enOperationType::Mul:
+        return Number1 * Number2;
+
+    case enOperationType::Div:
+        if (Number2 == 0)  return 0;
+        else               return Number1 / Number2;
+
+    case enOperationType::Pow:
+        return round(pow(Number1, Number2));
+
+    case enOperationType::Sqrt:
+        return round(sqrt(Number1));
+
+    default:
+        return Number1 + Number2;
+    }
+}
+
+stQuestion GenerateSingleQuestion(enQuestionsLevel Level, enOperationType OpType)
+{
+    stQuestion Question;
+
+    if (Level == enQuestionsLevel::MixLevel)
+    {
+        Level = static_cast<enQuestionsLevel>(RandomNumber(1, 4));
+    }
+    Question.QuestionLevel = Level;
+
+    if (Level == enQuestionsLevel::Master)
+    {
+        short RandomOp = RandomNumber(1, 6);
+
+        if (RandomOp == 5)      OpType = enOperationType::Pow;
+        else if (RandomOp == 6) OpType = enOperationType::Sqrt;
+        else                    OpType = static_cast<enOperationType>(RandomOp);
+    }
+    else if (OpType == enOperationType::MixOp)
+    {
+        OpType = static_cast<enOperationType>(RandomNumber(1, 4));
+    }
+
+    Question.OperationType = OpType;
+
+    switch (Level)
+    {
+    case enQuestionsLevel::Easy:
+        Question.Number1 = RandomNumber(1, 10);
+        Question.Number2 = RandomNumber(1, 10);
+        break;
+
+    case enQuestionsLevel::Normal:
+        Question.Number1 = RandomNumber(10, 50);
+        Question.Number2 = RandomNumber(10, 50);
+        break;
+
+    case enQuestionsLevel::Hard:
+        Question.Number1 = RandomNumber(50, 100);
+        Question.Number2 = RandomNumber(50, 100);
+        break;
+
+    case enQuestionsLevel::Expert:
+        Question.Number1 = RandomNumber(100, 1000);
+        Question.Number2 = RandomNumber(100, 1000);
+        break;
+
+    case enQuestionsLevel::Master:
+        if (Question.OperationType == enOperationType::Pow)
+        {
+            Question.Number1 = RandomNumber(2, 10);
+            Question.Number2 = RandomNumber(1, 4);
+        }
+        else if (Question.OperationType == enOperationType::Sqrt)
+        {
+            Question.Number1 = RandomNumber(16, 400);
+            Question.Number2 = 1;
+        }
+        else
+        {
+            Question.Number1 = RandomNumber(100, 5000);
+            Question.Number2 = RandomNumber(100, 5000);
+        }
+        break;
+    }
+
+    // تأكيد أمان الأُس لمنع الـ Integer Overflow في كول الحالات
+    if (Question.OperationType == enOperationType::Pow)
+    {
+        Question.Number2 = RandomNumber(1, 4);
+    }
+
+    Question.CorrectAnswer = SimpleCalculator(Question.Number1, Question.Number2, Question.OperationType);
+    Question.PlayerAnswer = 0;
+    Question.IsCorrect = false;
+
+    return Question;
+}
+
+void GenerateQuizQuestions(stQuizz& Quiz)
+{
+    for (int i = 0; i < Quiz.NumberOfQuestions; i++) {
+        Quiz.QuestionList[i] = GenerateSingleQuestion(Quiz.QuestionsLevel, Quiz.OpType);
+    }
+}
+
+// ==========================================
+// 📺 VISUAL EFFECTS & VIEWPORT GRAPHICS SYSTEM
+// ==========================================
+
+void SetScreenColor(bool IsCorrect)
+{
+    switch (IsCorrect)
+    {
+    case true:
+        for (int i = 1; i <= 3; i++)
+        {
+            system("color 2F"); Sleep(100);
+            system("color 0F"); Sleep(100);
+        }
+        system("color 2F");
+        break;
+
+    case false:
+        cout << "\a";
+        for (int i = 1; i <= 3; i++)
+        {
+            system("color 4F"); Sleep(100);
+            system("color 0F"); Sleep(100);
+        }
+        system("color 4F");
+        break;
+
+    default:
+        system("color 0F");
+        break;
+    }
+}
+
+void ResetScreen()
+{
+    system("cls");
+    system("color 0F");
+}
+
+int ReadPlayerAnswer()
+{
+    int PlayerAnswer = 0;
+    cin >> PlayerAnswer;
+    return PlayerAnswer;
+}
+
+void PrintQuestion(stQuizz Quiz, short QuestionNumber)
+{
+    stQuestion Question = Quiz.QuestionList[QuestionNumber];
+
+    cout << "\n----------------------------------------\n";
+    cout << "  Question [" << (QuestionNumber + 1) << " / " << Quiz.NumberOfQuestions << "]";
+    cout << "\n----------------------------------------\n\n";
+
+    if (Question.OperationType == enOperationType::Sqrt)
+    {
+        cout << "   " << GetOpTypeSymbol(Question.OperationType) << " ( " << Question.Number1 << " )\n";
+    }
+    else if (Question.OperationType == enOperationType::Pow)
+    {
+        cout << "   " << Question.Number1 << " " << GetOpTypeSymbol(Question.OperationType) << " " << Question.Number2 << "\n";
+    }
+    else
+    {
+        cout << "   " << Question.Number1 << "\n";
+        cout << " " << GetOpTypeSymbol(Question.OperationType) << " " << Question.Number2 << "\n";
+    }
+
+    cout << "___________________________\n";
+    cout << "Enter your answer: ";
+}
+
+// ==========================================
+// 🎮 GAMEPLAY EXECUTION & ARBITER ENGINE
+// ==========================================
+
+void PlayQuiz(stQuizz& Quiz)
+{
+    Quiz.RightAnswersCount = 0;
+    Quiz.WrongAnswersCount = 0;
+
+    for (int i = 0; i < Quiz.NumberOfQuestions; i++)
+    {
+        PrintQuestion(Quiz, i);
+        Quiz.QuestionList[i].PlayerAnswer = ReadPlayerAnswer();
+
+        if (Quiz.QuestionList[i].PlayerAnswer == Quiz.QuestionList[i].CorrectAnswer)
+        {
+            Quiz.QuestionList[i].IsCorrect = true;
+            Quiz.RightAnswersCount++;
+            cout << "\nRight Answer! :-) \n";
+        }
+        else
+        {
+            Quiz.QuestionList[i].IsCorrect = false;
+            Quiz.WrongAnswersCount++;
+            cout << "\nWrong Answer! :-( \n";
+            cout << "The Correct Answer is: " << Quiz.QuestionList[i].CorrectAnswer << "\n";
+        }
+
+        SetScreenColor(Quiz.QuestionList[i].IsCorrect);
+        Sleep(1000);
+        ResetScreen();
+    }
+
+    Quiz.IsPass = (Quiz.RightAnswersCount >= Quiz.WrongAnswersCount);
+}
+
+void ShowFinalQuizResults(stQuizz Quiz)
+{
+    cout << "\t=========================================" << endl;
+    if (Quiz.IsPass) { cout << "\t  Final result is Pass :-)   " << endl; }
+    else { cout << "\t Final result is Fail :-(  " << endl; }
+    cout << "\t=========================================" << endl;
+    cout << "\n______________________________________________________" << endl;
+
+    cout << "Number of Questions is     : " << Quiz.NumberOfQuestions << endl;
+    cout << "Questions level is         : " << GetQuizLevelName(Quiz.QuestionsLevel) << endl;
+    cout << "Operation type is          : " << GetOpTypeSymbol(Quiz.OpType) << endl;
+    cout << "Number of right answers is : " << Quiz.RightAnswersCount << endl;
+    cout << "Number of wrong answers is : " << Quiz.WrongAnswersCount << endl;
+    cout << "---------------------------------------------------------" << endl;
+
+    SetScreenColor(Quiz.IsPass);
+}
+
+bool AskToPlayAgain()
+{
+    string Answer;
+    do {
+        cout << "Do you want to play again? (yes or no) : ";
+        cin >> Answer;
+        if (Answer == "Yes" || Answer == "yes" || Answer == "YES") {
+            return true;
+        }
+        if (Answer == "No" || Answer == "no" || Answer == "NO") {
+            return false;
+        }
+        cout << "Invalid input! Please enter strictly (yes) or (no).\n";
+    } while (true);
+}
+
+void StartQuizGame()
+{
+    stQuizz Quiz;
+    do {
+        ResetScreen();
+        Quiz.NumberOfQuestions = ReadHowManyQuestions();
+        Quiz.QuestionsLevel = ReadQuestionsLevel();
+
+        if (Quiz.QuestionsLevel != enQuestionsLevel::Master) {
+            Quiz.OpType = ReadOpType();
+        }
+        else {
+            Quiz.OpType = enOperationType::MixOp; 
+        }
+
+        GenerateQuizQuestions(Quiz);
+        PlayQuiz(Quiz);
+        ShowFinalQuizResults(Quiz);
+    } while (AskToPlayAgain());
+}
+
+// ==========================================
+// 🏁 MAIN SYSTEM CALL INTERFACE
+// ==========================================
+
+int main()
+{
+    srand((unsigned)time(NULL));
+    StartQuizGame();
+    return 0;
+}
